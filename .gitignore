@@ -1,0 +1,14 @@
+target/
+**/*.rs.bk
+Cargo.lock
+.pytest_cache/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.dylib
+*.dll
+snapshots/*.snap.new
+pkg/
+dist/

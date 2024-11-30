@@ -1,0 +1,38 @@
+[package]
+name = "tja"
+version = "0.3.0"
+edition = "2021"
+description = "TJA file parser written in Rust, working in Rust, Python, and WebAssembly."
+license = "MIT"
+authors = ["JacobLinCool <jacob@csie.cool>"]
+homepage = "https://github.com/JacobLinCool/tja-rs"
+repository = "https://github.com/JacobLinCool/tja-rs"
+
+[[bin]]
+name = "tja"
+path = "src/bin/tja.rs"
+required-features = []  # Binary works without any features
+
+[lib]
+name = "tja"
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = []
+python = ["dep:pyo3"]
+wasm = ["dep:wasm-bindgen", "dep:js-sys", "dep:serde-wasm-bindgen"]
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+pyo3 = { version = "0.23", features = [
+    "extension-module",
+    "abi3-py38",
+], optional = true }
+wasm-bindgen = { version = "0.2", optional = true }
+js-sys = { version = "0.3", optional = true }
+serde-wasm-bindgen = { version = "0.6", optional = true }
+
+[dev-dependencies]
+insta = { version = "1.41", features = ["json"] }

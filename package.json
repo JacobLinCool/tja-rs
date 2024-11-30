@@ -1,0 +1,12 @@
+{
+    "name": "tja",
+    "description": "TJA file parser written in Rust, working in Rust, Python, and WebAssembly.",
+    "main": "pkg/tja.js",
+    "types": "pkg/tja.d.ts",
+    "files": [
+        "pkg/"
+    ],
+    "scripts": {
+        "build": "wasm-pack build --target web --features wasm"
+    }
+}

@@ -79,7 +79,7 @@ impl std::str::FromStr for Level {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(transparent)]
 pub struct Metadata {
-    data: HashMap<String, String>,
+    pub data: HashMap<String, String>,
 }
 
 impl Metadata {

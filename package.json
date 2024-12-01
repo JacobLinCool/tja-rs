@@ -1,5 +1,5 @@
 {
-    "name": "tja",
+    "name": "@jacoblincool/tja",
     "description": "TJA file parser written in Rust, working in Rust, Python, and WebAssembly.",
     "main": "pkg/tja.js",
     "types": "pkg/tja.d.ts",
@@ -7,6 +7,6 @@
         "pkg/"
     ],
     "scripts": {
-        "build": "wasm-pack build --target web --features wasm"
+        "build": "wasm-pack build --scope jacoblincool --target web --features wasm"
     }
 }

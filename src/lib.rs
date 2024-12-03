@@ -19,7 +19,6 @@ pub use wasm::*;
 #[cfg(test)]
 mod tests {
     use super::*;
-    use insta::assert_json_snapshot;
     use std::fs;
 
     #[test]
@@ -28,7 +27,10 @@ mod tests {
         let mut parser = TJAParser::new();
         parser.parse_str(&content).unwrap();
         let parsed_tja = parser.get_parsed_tja();
-        assert_json_snapshot!("supernova", parsed_tja);
+
+        insta::with_settings!({sort_maps => true}, {
+            insta::assert_json_snapshot!("supernova", parsed_tja);
+        });
     }
 
     #[test]
@@ -37,6 +39,19 @@ mod tests {
         let mut parser = TJAParser::new();
         parser.parse_str(&content).unwrap();
         let parsed_tja = parser.get_parsed_tja();
-        assert_json_snapshot!("nijiiro_baton", parsed_tja);
+        insta::with_settings!({sort_maps => true}, {
+            insta::assert_json_snapshot!("nijiiro_baton", parsed_tja);
+        });
+    }
+
+    #[test]
+    fn test_parse_mint_tears() {
+        let content = fs::read_to_string("data/mint tears.tja").unwrap();
+        let mut parser = TJAParser::new();
+        parser.parse_str(&content).unwrap();
+        let parsed_tja = parser.get_parsed_tja();
+        insta::with_settings!({sort_maps => true}, {
+            insta::assert_json_snapshot!("mint_tears", parsed_tja);
+        });
     }
 }

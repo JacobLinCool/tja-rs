@@ -81,8 +81,8 @@ pub struct Metadata {
     pub bpm: f64,
     pub offset: f64,
     pub demostart: f64,
-    pub song_vol: i32,
-    pub se_vol: i32,
+    pub songvol: i32,
+    pub sevol: i32,
     pub raw: HashMap<String, String>,
 }
 
@@ -100,11 +100,11 @@ impl Metadata {
             .get("DEMOSTART")
             .and_then(|s| s.parse().ok())
             .unwrap_or(0.0);
-        let song_vol = data
+        let songvol = data
             .get("SONGVOL")
             .and_then(|s| s.parse().ok())
             .unwrap_or(100);
-        let se_vol = data
+        let sevol = data
             .get("SEVOL")
             .and_then(|s| s.parse().ok())
             .unwrap_or(100);
@@ -114,8 +114,8 @@ impl Metadata {
             bpm,
             offset,
             demostart,
-            song_vol,
-            se_vol,
+            songvol,
+            sevol,
         }
     }
 

@@ -54,4 +54,28 @@ mod tests {
             insta::assert_json_snapshot!("mint_tears", parsed_tja);
         });
     }
+
+    #[test]
+    fn test_parse_supernova_metadata_only() {
+        let content = fs::read_to_string("data/SUPERNOVA.tja").unwrap();
+        let mut parser = TJAParser::with_mode(ParsingMode::MetadataOnly);
+        parser.parse_str(&content).unwrap();
+        let parsed_tja = parser.get_parsed_tja();
+
+        insta::with_settings!({sort_maps => true}, {
+            insta::assert_json_snapshot!("supernova_metadata_only", parsed_tja);
+        });
+    }
+
+    #[test]
+    fn test_parse_supernova_metadata_and_header() {
+        let content = fs::read_to_string("data/SUPERNOVA.tja").unwrap();
+        let mut parser = TJAParser::with_mode(ParsingMode::MetadataAndHeader);
+        parser.parse_str(&content).unwrap();
+        let parsed_tja = parser.get_parsed_tja();
+
+        insta::with_settings!({sort_maps => true}, {
+            insta::assert_json_snapshot!("supernova_metadata_and_header", parsed_tja);
+        });
+    }
 }

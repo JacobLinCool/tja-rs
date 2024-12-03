@@ -1,7 +1,14 @@
-use crate::directives::{Directive, DirectiveHandler, DirectiveType};
+use crate::directives::{Directive, DirectiveHandler};
 use crate::types::*;
 use std::collections::HashMap;
 use std::collections::HashSet;
+
+#[derive(Debug, Clone, PartialEq)]
+pub enum ParsingState {
+    Metadata,
+    Header,
+    Notes,
+}
 
 #[derive(Debug, Clone)]
 pub struct ParserState {
@@ -16,6 +23,7 @@ pub struct ParserState {
     pub parsing_chart: bool,
     pub delay: f64,
     pub timestamp: f64,
+    pub parsing_state: ParsingState,
 }
 
 impl ParserState {
@@ -32,6 +40,7 @@ impl ParserState {
             parsing_chart: false,
             delay: 0.0,
             timestamp: 0.0,
+            parsing_state: ParsingState::Metadata,
         }
     }
 
@@ -109,55 +118,63 @@ impl TJAParser {
 
     pub fn parse_str(&mut self, content: &str) -> Result<(), String> {
         let mut metadata_dict = HashMap::with_capacity(self.metadata_keys.len());
-        let mut notes_buffer = Vec::with_capacity(content.lines().count() / 4);
+        let mut notes_buffer = Vec::new();
 
-        // First pass: collect metadata
+        // Initialize state
+        self.state = Some(ParserState::new(120.0)); // Default BPM, will be updated when found
+
         for line in content.lines() {
             if let Some(line) = normalize_line(line) {
-                self.handle_metadata_or_header(line, &mut metadata_dict);
-            }
-        }
-
-        // Initialize state with metadata
-        self.metadata = Some(Metadata::new(metadata_dict));
-        self.state = Some(ParserState::new(self.metadata.as_ref().unwrap().bpm));
-
-        // Second pass: process everything else
-        for line in content.lines() {
-            let line = line.trim();
-
-            if line.is_empty() || line.starts_with("//") {
-                continue;
-            }
-
-            if line.contains(":") && !line.starts_with("#") {
-                self.handle_metadata_or_header(line, &mut HashMap::new());
-                continue;
-            }
-
-            if let Some(command) = line.strip_prefix("#") {
-                let handler = DirectiveHandler::new();
-
-                if let Some(directive_type) = handler.get_directive_type(command) {
-                    match directive_type {
-                        DirectiveType::Bar => {
-                            // Process any accumulated notes before handling bar directive
+                match self.state.as_ref().unwrap().parsing_state {
+                    ParsingState::Metadata => {
+                        if let Some((key, value)) = self.parse_metadata_or_header(line) {
+                            let state = self.state.as_mut().unwrap();
+                            if self.metadata_keys.contains(&key) {
+                                if key == "BPM" {
+                                    if let Ok(bpm) = value.parse::<f64>() {
+                                        state.bpm = bpm;
+                                    }
+                                }
+                                metadata_dict.insert(key, value.clone());
+                            } else {
+                                // If we hit a non-metadata key, transition to Header state
+                                self.metadata = Some(Metadata::new(metadata_dict.clone()));
+                                state.parsing_state = ParsingState::Header;
+                                // Process this line as header
+                                self.handle_metadata_or_header(line, &mut HashMap::new());
+                            }
+                        }
+                    }
+                    ParsingState::Header => {
+                        let state = self.state.as_mut().unwrap();
+                        if line.starts_with("#START") {
+                            state.parsing_state = ParsingState::Notes;
+                            self.process_directive(&line[1..])?;
+                        } else {
+                            self.handle_metadata_or_header(line, &mut HashMap::new());
+                        }
+                    }
+                    ParsingState::Notes => {
+                        if line.starts_with("#END") {
+                            // Process any buffered notes before transitioning
                             if !notes_buffer.is_empty() {
-                                self.process_notes_buffer(&notes_buffer)
-                                    .map_err(|e| e.to_string())?;
+                                self.process_notes_buffer(&notes_buffer)?;
                                 notes_buffer.clear();
                             }
-                            self.process_directive(command).map_err(|e| e.to_string())?;
-                        }
-                        DirectiveType::Note => {
+                            self.process_directive(&line[1..])?;
+                            let state = self.state.as_mut().unwrap();
+                            state.parsing_state = ParsingState::Header;
+                        } else if line.starts_with('#') {
+                            // Process any buffered notes before handling directive
+                            if !notes_buffer.is_empty() {
+                                self.process_notes_buffer(&notes_buffer)?;
+                                notes_buffer.clear();
+                            }
+                            self.process_directive(&line[1..])?;
+                        } else {
                             notes_buffer.push(line.to_string());
                         }
                     }
-                }
-            } else if self.state.as_ref().map_or(false, |s| s.parsing_chart) {
-                // Handle regular notes line
-                if let Some(notes_part) = line.split("//").next() {
-                    notes_buffer.push(notes_part.to_string());
                 }
             }
         }
@@ -329,36 +346,6 @@ impl TJAParser {
 
         for c in notes_str.chars() {
             match c {
-                ',' => {
-                    if let Some(segment) = current_chart.segments.last_mut() {
-                        let count = segment.notes.len();
-                        if count > 0 {
-                            for note in segment.notes.iter_mut() {
-                                note.timestamp = state.timestamp + note.delay;
-                                state.timestamp += 60.0 / note.bpm * segment.measure_num as f64
-                                    / segment.measure_den as f64
-                                    * 4.0
-                                    / count as f64;
-                            }
-                        } else {
-                            state.timestamp += 60.0 / state.bpm * segment.measure_num as f64
-                                / segment.measure_den as f64
-                                * 4.0;
-                        }
-                        segment
-                            .notes
-                            .retain(|note| note.note_type != NoteType::Empty);
-                    }
-
-                    let new_segment = Segment::new(
-                        state.measure_num,
-                        state.measure_den,
-                        state.barline,
-                        state.branch_active,
-                        state.branch_condition.clone(),
-                    );
-                    current_chart.segments.push(new_segment);
-                }
                 '0'..='9' => {
                     if let Some(note_type) = NoteType::from_char(c) {
                         let note = Note {
@@ -374,6 +361,20 @@ impl TJAParser {
                             segment.notes.push(note);
                         }
                     }
+                }
+                ',' => {
+                    if let Some(segment) = current_chart.segments.last_mut() {
+                        calculate_note_timestamp(state, segment);
+                    }
+
+                    let new_segment = Segment::new(
+                        state.measure_num,
+                        state.measure_den,
+                        state.barline,
+                        state.branch_active,
+                        state.branch_condition.clone(),
+                    );
+                    current_chart.segments.push(new_segment);
                 }
                 _ => {} // Ignore other characters
             }
@@ -451,4 +452,22 @@ fn normalize_line(line: &str) -> Option<&str> {
         return None;
     }
     Some(line)
+}
+
+fn calculate_note_timestamp(state: &mut ParserState, segment: &mut Segment) {
+    let count = segment.notes.len();
+    if count > 0 {
+        for note in segment.notes.iter_mut() {
+            note.timestamp = state.timestamp + note.delay;
+            state.timestamp +=
+                60.0 / note.bpm * segment.measure_num as f64 / segment.measure_den as f64 * 4.0
+                    / count as f64;
+        }
+    } else {
+        state.timestamp +=
+            60.0 / state.bpm * segment.measure_num as f64 / segment.measure_den as f64 * 4.0;
+    }
+    segment
+        .notes
+        .retain(|note| note.note_type != NoteType::Empty);
 }

@@ -2,6 +2,7 @@ from typing import Dict, List, Optional
 
 class PyNote:
     note_type: str
+    timestamp: float
     scroll: float
     delay: float
     bpm: float

@@ -6,7 +6,9 @@ use std::collections::HashMap;
 #[derive(Clone, Debug)]
 struct PyNote {
     #[pyo3(get)]
-    note_type: String, // We'll convert NoteType to string for easier Python interaction
+    note_type: String,
+    #[pyo3(get)]
+    timestamp: f64,
     #[pyo3(get)]
     scroll: f64,
     #[pyo3(get)]
@@ -63,6 +65,7 @@ impl From<Note> for PyNote {
     fn from(note: Note) -> Self {
         PyNote {
             note_type: format!("{:?}", note.note_type),
+            timestamp: note.timestamp,
             scroll: note.scroll,
             delay: note.delay,
             bpm: note.bpm,
@@ -100,7 +103,7 @@ impl From<Chart> for PyChart {
 impl From<ParsedTJA> for PyParsedTJA {
     fn from(parsed: ParsedTJA) -> Self {
         PyParsedTJA {
-            metadata: parsed.metadata.data,
+            metadata: parsed.metadata.raw,
             charts: parsed.charts.into_iter().map(PyChart::from).collect(),
         }
     }

@@ -12,7 +12,7 @@ class PySegment:
     measure_num: int
     measure_den: int
     barline: bool
-    branch_active: bool
+    branch: Optional[str]
     branch_condition: Optional[str]
     notes: List[PyNote]
 

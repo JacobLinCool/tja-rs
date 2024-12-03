@@ -21,6 +21,9 @@ pub enum Directive {
     Measure(i32, i32), // num/den
     Delay(f64),
     Section,
+    BranchNormal,
+    BranchMaster,
+    BranchExpert,
 }
 
 pub struct DirectiveHandler;
@@ -70,6 +73,9 @@ impl DirectiveHandler {
             }
             "DELAY" => args.parse().ok().map(Directive::Delay),
             "SECTION" => Some(Directive::Section),
+            "N" => Some(Directive::BranchNormal),
+            "M" => Some(Directive::BranchMaster),
+            "E" => Some(Directive::BranchExpert),
             _ => None,
         }
     }
@@ -78,7 +84,7 @@ impl DirectiveHandler {
         let base_directive = command.split_whitespace().next()?.to_uppercase();
         match base_directive.as_str() {
             "START" | "END" | "MEASURE" | "BARLINEOFF" | "BARLINEON" | "BRANCHSTART"
-            | "BRANCHEND" | "SECTION" => Some(DirectiveType::Bar),
+            | "BRANCHEND" | "SECTION" | "N" | "M" | "E" => Some(DirectiveType::Bar),
             "SCROLL" | "DELAY" | "BPMCHANGE" | "GOGOSTART" | "GOGOEND" => Some(DirectiveType::Note),
             _ => None,
         }

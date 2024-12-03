@@ -18,11 +18,13 @@ pub struct ParserState {
     pub barline: bool,
     pub measure_num: i32,
     pub measure_den: i32,
-    pub branch_active: bool,
     pub branch_condition: Option<String>,
+    pub current_branch: Option<String>,
     pub parsing_chart: bool,
     pub delay: f64,
     pub timestamp: f64,
+    pub timestamp_branch_start: f64,
+    pub current_segment: Option<Segment>,
     pub parsing_state: ParsingState,
 }
 
@@ -35,11 +37,13 @@ impl ParserState {
             barline: true,
             measure_num: 4,
             measure_den: 4,
-            branch_active: false,
             branch_condition: None,
+            current_branch: None,
             parsing_chart: false,
             delay: 0.0,
             timestamp: 0.0,
+            timestamp_branch_start: 0.0,
+            current_segment: None,
             parsing_state: ParsingState::Metadata,
         }
     }
@@ -164,13 +168,13 @@ impl TJAParser {
                             self.process_directive(&line[1..])?;
                             let state = self.state.as_mut().unwrap();
                             state.parsing_state = ParsingState::Header;
-                        } else if line.starts_with('#') {
+                        } else if let Some(directive) = line.strip_prefix('#') {
                             // Process any buffered notes before handling directive
                             if !notes_buffer.is_empty() {
                                 self.process_notes_buffer(&notes_buffer)?;
                                 notes_buffer.clear();
                             }
-                            self.process_directive(&line[1..])?;
+                            self.process_directive(directive)?;
                         } else {
                             notes_buffer.push(line.to_string());
                         }
@@ -181,8 +185,7 @@ impl TJAParser {
 
         // Process any remaining notes
         if !notes_buffer.is_empty() {
-            self.process_notes_buffer(&notes_buffer)
-                .map_err(|e| e.to_string())?;
+            self.process_notes_buffer(&notes_buffer)?;
         }
 
         Ok(())
@@ -268,8 +271,14 @@ impl TJAParser {
                     state.timestamp = -self.metadata.as_ref().unwrap().offset;
                 }
                 Directive::End => {
+                    // Finalize current segment if it exists
+                    if let Some(mut segment) = state.current_segment.take() {
+                        if let Some(current_chart) = self.charts.last_mut() {
+                            calculate_note_timestamp(state, &mut segment);
+                            current_chart.segments.push(segment);
+                        }
+                    }
                     state.parsing_chart = false;
-                    state.branch_active = false;
                     state.branch_condition = None;
                 }
                 Directive::BpmChange(bpm) => {
@@ -291,12 +300,13 @@ impl TJAParser {
                     state.barline = true;
                 }
                 Directive::BranchStart(condition) => {
-                    state.branch_active = true;
                     state.branch_condition = Some(condition);
+                    state.timestamp_branch_start = state.timestamp;
                 }
                 Directive::BranchEnd => {
-                    state.branch_active = false;
+                    state.parsing_chart = false;
                     state.branch_condition = None;
+                    state.current_branch = None;
                 }
                 Directive::Measure(num, den) => {
                     state.measure_num = num;
@@ -306,7 +316,19 @@ impl TJAParser {
                     state.delay += value;
                 }
                 Directive::Section => {
-                    // Handle section if needed
+                    // Handle section if needed, i don't remember what's this
+                }
+                Directive::BranchNormal => {
+                    state.current_branch = Some("N".to_string());
+                    state.timestamp = state.timestamp_branch_start;
+                }
+                Directive::BranchMaster => {
+                    state.current_branch = Some("M".to_string());
+                    state.timestamp = state.timestamp_branch_start;
+                }
+                Directive::BranchExpert => {
+                    state.current_branch = Some("E".to_string());
+                    state.timestamp = state.timestamp_branch_start;
                 }
             }
         }
@@ -328,22 +350,6 @@ impl TJAParser {
             .last_mut()
             .ok_or_else(|| "No current chart".to_string())?;
 
-        // Create initial segment if none exists
-        if current_chart.segments.is_empty() {
-            let new_segment = Segment::new(
-                state.measure_num,
-                state.measure_den,
-                state.barline,
-                state.branch_active,
-                state.branch_condition.clone(),
-            );
-            current_chart.segments.push(new_segment);
-        }
-
-        if let Some(segment) = current_chart.segments.last_mut() {
-            segment.notes.reserve(notes_str.len());
-        }
-
         for c in notes_str.chars() {
             match c {
                 '0'..='9' => {
@@ -357,24 +363,27 @@ impl TJAParser {
                             gogo: state.gogo,
                         };
 
-                        if let Some(segment) = current_chart.segments.last_mut() {
+                        if state.current_segment.is_none() {
+                            state.current_segment = Some(Segment::new(
+                                state.measure_num,
+                                state.measure_den,
+                                state.barline,
+                                state.current_branch.clone(),
+                                state.branch_condition.clone(),
+                            ));
+                            state.current_segment.as_mut().unwrap().notes.reserve(64);
+                        }
+                        if let Some(segment) = &mut state.current_segment {
                             segment.notes.push(note);
                         }
                     }
                 }
                 ',' => {
-                    if let Some(segment) = current_chart.segments.last_mut() {
-                        calculate_note_timestamp(state, segment);
+                    // Finalize current segment and create new one
+                    if let Some(mut segment) = state.current_segment.take() {
+                        calculate_note_timestamp(state, &mut segment);
+                        current_chart.segments.push(segment);
                     }
-
-                    let new_segment = Segment::new(
-                        state.measure_num,
-                        state.measure_den,
-                        state.barline,
-                        state.branch_active,
-                        state.branch_condition.clone(),
-                    );
-                    current_chart.segments.push(new_segment);
                 }
                 _ => {} // Ignore other characters
             }

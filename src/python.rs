@@ -29,7 +29,7 @@ struct PySegment {
     #[pyo3(get)]
     barline: bool,
     #[pyo3(get)]
-    branch_active: bool,
+    branch: Option<String>,
     #[pyo3(get)]
     branch_condition: Option<String>,
     #[pyo3(get)]
@@ -80,7 +80,7 @@ impl From<Segment> for PySegment {
             measure_num: segment.measure_num,
             measure_den: segment.measure_den,
             barline: segment.barline,
-            branch_active: segment.branch_active,
+            branch: segment.branch,
             branch_condition: segment.branch_condition,
             notes: segment.notes.into_iter().map(PyNote::from).collect(),
         }

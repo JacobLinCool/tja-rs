@@ -139,7 +139,7 @@ pub struct Segment {
     pub measure_num: i32,
     pub measure_den: i32,
     pub barline: bool,
-    pub branch_active: bool,
+    pub branch: Option<String>,
     pub branch_condition: Option<String>,
     pub notes: Vec<Note>,
 }
@@ -149,14 +149,14 @@ impl Segment {
         measure_num: i32,
         measure_den: i32,
         barline: bool,
-        branch_active: bool,
+        branch: Option<String>,
         branch_condition: Option<String>,
     ) -> Self {
         Self {
             measure_num,
             measure_den,
             barline,
-            branch_active,
+            branch,
             branch_condition,
             notes: Vec::new(),
         }

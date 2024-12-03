@@ -10,6 +10,13 @@ pub enum ParsingState {
     Notes,
 }
 
+#[derive(Debug, Clone, PartialEq)]
+pub enum ParsingMode {
+    MetadataOnly,
+    MetadataAndHeader,
+    Full,
+}
+
 #[derive(Debug, Clone)]
 pub struct ParserState {
     pub bpm: f64,
@@ -63,6 +70,7 @@ pub struct TJAParser {
     metadata_keys: HashSet<String>,
     header_keys: HashSet<String>,
     inheritable_header_keys: HashSet<String>,
+    mode: ParsingMode,
 }
 
 impl Default for TJAParser {
@@ -117,15 +125,21 @@ impl TJAParser {
             metadata_keys,
             header_keys,
             inheritable_header_keys,
+            mode: ParsingMode::Full,
         }
+    }
+
+    pub fn with_mode(mode: ParsingMode) -> Self {
+        let mut parser = Self::new();
+        parser.mode = mode;
+        parser
     }
 
     pub fn parse_str(&mut self, content: &str) -> Result<(), String> {
         let mut metadata_dict = HashMap::with_capacity(self.metadata_keys.len());
         let mut notes_buffer = Vec::new();
 
-        // Initialize state
-        self.state = Some(ParserState::new(120.0)); // Default BPM, will be updated when found
+        self.state = Some(ParserState::new(120.0));
 
         for line in content.lines() {
             if let Some(line) = normalize_line(line) {
@@ -141,11 +155,15 @@ impl TJAParser {
                                 }
                                 metadata_dict.insert(key, value.clone());
                             } else {
-                                // If we hit a non-metadata key, transition to Header state
                                 self.metadata = Some(Metadata::new(metadata_dict.clone()));
-                                state.parsing_state = ParsingState::Header;
-                                // Process this line as header
-                                self.handle_metadata_or_header(line, &mut HashMap::new());
+
+                                match self.mode {
+                                    ParsingMode::MetadataOnly => return Ok(()),
+                                    ParsingMode::MetadataAndHeader | ParsingMode::Full => {
+                                        state.parsing_state = ParsingState::Header;
+                                        self.handle_metadata_or_header(line, &mut HashMap::new());
+                                    }
+                                }
                             }
                         }
                     }
@@ -159,31 +177,33 @@ impl TJAParser {
                         }
                     }
                     ParsingState::Notes => {
-                        if line.starts_with("#END") {
-                            // Process any buffered notes before transitioning
-                            if !notes_buffer.is_empty() {
-                                self.process_notes_buffer(&notes_buffer)?;
-                                notes_buffer.clear();
+                        if self.mode == ParsingMode::Full {
+                            if line.starts_with("#END") {
+                                if !notes_buffer.is_empty() {
+                                    self.process_notes_buffer(&notes_buffer)?;
+                                    notes_buffer.clear();
+                                }
+                                self.process_directive(&line[1..])?;
+                                let state = self.state.as_mut().unwrap();
+                                state.parsing_state = ParsingState::Header;
+                            } else if let Some(directive) = line.strip_prefix('#') {
+                                if !notes_buffer.is_empty() {
+                                    self.process_notes_buffer(&notes_buffer)?;
+                                    notes_buffer.clear();
+                                }
+                                self.process_directive(directive)?;
+                            } else {
+                                notes_buffer.push(line.to_string());
                             }
-                            self.process_directive(&line[1..])?;
+                        } else if line.starts_with("#END") {
                             let state = self.state.as_mut().unwrap();
                             state.parsing_state = ParsingState::Header;
-                        } else if let Some(directive) = line.strip_prefix('#') {
-                            // Process any buffered notes before handling directive
-                            if !notes_buffer.is_empty() {
-                                self.process_notes_buffer(&notes_buffer)?;
-                                notes_buffer.clear();
-                            }
-                            self.process_directive(directive)?;
-                        } else {
-                            notes_buffer.push(line.to_string());
                         }
                     }
                 }
             }
         }
 
-        // Process any remaining notes
         if !notes_buffer.is_empty() {
             self.process_notes_buffer(&notes_buffer)?;
         }
@@ -271,7 +291,6 @@ impl TJAParser {
                     state.timestamp = -self.metadata.as_ref().unwrap().offset;
                 }
                 Directive::End => {
-                    // Finalize current segment if it exists
                     if let Some(mut segment) = state.current_segment.take() {
                         if let Some(current_chart) = self.charts.last_mut() {
                             calculate_note_timestamp(state, &mut segment);
@@ -379,20 +398,18 @@ impl TJAParser {
                     }
                 }
                 ',' => {
-                    // Finalize current segment and create new one
                     if let Some(mut segment) = state.current_segment.take() {
                         calculate_note_timestamp(state, &mut segment);
                         current_chart.segments.push(segment);
                     }
                 }
-                _ => {} // Ignore other characters
+                _ => {}
             }
         }
 
         Ok(())
     }
 
-    // Getter methods
     pub fn get_metadata(&self) -> Option<&Metadata> {
         self.metadata.as_ref()
     }

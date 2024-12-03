@@ -1,4 +1,4 @@
-use crate::{types::*, TJAParser};
+use crate::{types::*, ParsingMode, TJAParser};
 use pyo3::prelude::*;
 use std::collections::HashMap;
 
@@ -109,9 +109,28 @@ impl From<ParsedTJA> for PyParsedTJA {
     }
 }
 
+#[pyclass(eq)]
+#[derive(Clone, Debug, PartialEq)]
+pub enum PyParsingMode {
+    MetadataOnly,
+    MetadataAndHeader,
+    Full,
+}
+
+impl From<PyParsingMode> for ParsingMode {
+    fn from(mode: PyParsingMode) -> Self {
+        match mode {
+            PyParsingMode::MetadataOnly => ParsingMode::MetadataOnly,
+            PyParsingMode::MetadataAndHeader => ParsingMode::MetadataAndHeader,
+            PyParsingMode::Full => ParsingMode::Full,
+        }
+    }
+}
+
 #[pyfunction]
-pub fn parse_tja(content: &str) -> PyResult<PyParsedTJA> {
-    let mut parser = TJAParser::new();
+#[pyo3(signature = (content, mode = PyParsingMode::Full))]
+pub fn parse_tja(content: &str, mode: PyParsingMode) -> PyResult<PyParsedTJA> {
+    let mut parser = TJAParser::with_mode(mode.into());
     parser
         .parse_str(content)
         .map_err(|e| PyErr::new::<pyo3::exceptions::PyValueError, _>(e))?;
@@ -126,6 +145,7 @@ pub fn tja(_py: Python<'_>, m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_class::<PySegment>()?;
     m.add_class::<PyChart>()?;
     m.add_class::<PyParsedTJA>()?;
+    m.add_class::<PyParsingMode>()?;
     m.add_function(wrap_pyfunction!(parse_tja, m)?)?;
     Ok(())
 }

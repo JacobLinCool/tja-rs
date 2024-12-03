@@ -2,6 +2,8 @@
 
 TJA file parser written in Rust, working in Rust, Python, and WebAssembly.
 
+It's fast! [See the benchmark](https://jacoblincool.github.io/tja-rs/report/)
+
 ## Building
 
 ### Rust

@@ -1,4 +1,10 @@
+from enum import Enum
 from typing import Dict, List, Optional
+
+class ParsingMode(Enum):
+    MetadataOnly = "MetadataOnly"
+    MetadataAndHeader = "MetadataAndHeader"
+    Full = "Full"
 
 class PyNote:
     note_type: str
@@ -28,4 +34,4 @@ class PyParsedTJA:
     metadata: Dict[str, str]
     charts: List[PyChart]
 
-def parse_tja(content: str) -> PyParsedTJA: ... 
+def parse_tja(content: str, mode: ParsingMode = ParsingMode.Full) -> PyParsedTJA: ... 

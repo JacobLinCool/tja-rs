@@ -1,7 +1,13 @@
-export function parse_tja(content: string): Promise<ParsedTJA>;
+export function parse_tja(content: string, mode?: WasmParsingMode): Promise<ParsedTJA>;
+
+export enum WasmParsingMode {
+    MetadataOnly = 0,
+    MetadataAndHeader = 1,
+    Full = 2,
+}
 
 export interface ParsedTJA {
-    metadata: Record<string ,string>;
+    metadata: Record<string, string>;
     charts: Chart[];
 }
 
@@ -10,7 +16,7 @@ export interface Chart {
     course?: "Easy" | "Normal" | "Hard" | "Oni" | "Ura";
     level?: number;
     balloons: number[];
-    headers: Record<string ,string>;
+    headers: Record<string, string>;
     segments: Segment[];
 }
 

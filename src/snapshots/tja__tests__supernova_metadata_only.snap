@@ -1,0 +1,26 @@
+---
+source: src/lib.rs
+expression: parsed_tja
+snapshot_kind: text
+---
+{
+  "metadata": {
+    "bpm": 211.99990844726563,
+    "offset": -1.1999999641890422,
+    "demostart": 116.952,
+    "songvol": 100,
+    "sevol": 100,
+    "raw": {
+      "BPM": "211.999908447265625",
+      "DEMOSTART": "116.952",
+      "OFFSET": "-1.19999996418904221875",
+      "SCOREMODE": "2",
+      "SEVOL": "100",
+      "SONGVOL": "100",
+      "SUBTITLE": "--USAO",
+      "TITLE": "SUPERNOVA",
+      "WAVE": "SUPERNOVA.ogg"
+    }
+  },
+  "charts": []
+}

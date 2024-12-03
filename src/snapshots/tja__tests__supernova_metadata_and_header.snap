@@ -1,0 +1,132 @@
+---
+source: src/lib.rs
+expression: parsed_tja
+snapshot_kind: text
+---
+{
+  "metadata": {
+    "bpm": 211.99990844726563,
+    "offset": -1.1999999641890422,
+    "demostart": 116.952,
+    "songvol": 100,
+    "sevol": 100,
+    "raw": {
+      "BPM": "211.999908447265625",
+      "DEMOSTART": "116.952",
+      "OFFSET": "-1.19999996418904221875",
+      "SCOREMODE": "2",
+      "SEVOL": "100",
+      "SONGVOL": "100",
+      "SUBTITLE": "--USAO",
+      "TITLE": "SUPERNOVA",
+      "WAVE": "SUPERNOVA.ogg"
+    }
+  },
+  "charts": [
+    {
+      "player": 0,
+      "course": "Ura",
+      "level": 10,
+      "balloons": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        39,
+        3,
+        3
+      ],
+      "headers": {
+        "BALLOON": "3,3,3,3,3,3,3,39,3,3",
+        "COURSE": "Edit",
+        "LEVEL": "10",
+        "SCOREDIFF": "0",
+        "SCOREINIT": "910"
+      },
+      "segments": []
+    },
+    {
+      "player": 0,
+      "course": "Oni",
+      "level": 10,
+      "balloons": [
+        29,
+        2
+      ],
+      "headers": {
+        "BALLOON": "29,2",
+        "COURSE": "Oni",
+        "LEVEL": "10",
+        "SCOREDIFF": "0",
+        "SCOREINIT": "1070"
+      },
+      "segments": []
+    },
+    {
+      "player": 0,
+      "course": "Hard",
+      "level": 8,
+      "balloons": [
+        8,
+        30,
+        19,
+        30,
+        5,
+        8
+      ],
+      "headers": {
+        "BALLOON": "8,30,19,30,5,8",
+        "COURSE": "Hard",
+        "LEVEL": "8",
+        "SCOREDIFF": "0",
+        "SCOREINIT": "1980"
+      },
+      "segments": []
+    },
+    {
+      "player": 0,
+      "course": "Normal",
+      "level": 7,
+      "balloons": [
+        5,
+        18,
+        11,
+        18,
+        5,
+        6
+      ],
+      "headers": {
+        "BALLOON": "5,18,11,18,5,6",
+        "COURSE": "Normal",
+        "LEVEL": "7",
+        "SCOREDIFF": "0",
+        "SCOREINIT": "2440"
+      },
+      "segments": []
+    },
+    {
+      "player": 0,
+      "course": "Easy",
+      "level": 5,
+      "balloons": [
+        4,
+        15,
+        9,
+        15,
+        4,
+        5
+      ],
+      "headers": {
+        "BALLOON": "4,15,9,15,4,5",
+        "COURSE": "Easy",
+        "LEVEL": "5",
+        "SCOREDIFF": "0",
+        "SCOREINIT": "3780"
+      },
+      "segments": []
+    }
+  ]
+}

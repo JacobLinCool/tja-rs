@@ -1,7 +1,7 @@
 use criterion::{black_box, criterion_group, criterion_main, Criterion};
 use std::fs;
 use std::path::Path;
-use tja::TJAParser;
+use tja::{ParsingMode, TJAParser};
 
 fn parse_benchmark(c: &mut Criterion) {
     let mut group = c.benchmark_group("TJA Parser");
@@ -24,14 +24,23 @@ fn parse_benchmark(c: &mut Criterion) {
         })
         .collect();
 
-    // Benchmark each file
+    // Define parsing modes to benchmark
+    let modes = [
+        (ParsingMode::MetadataOnly, "metadata_only"),
+        (ParsingMode::MetadataAndHeader, "metadata_and_header"),
+        (ParsingMode::Full, "full"),
+    ];
+
+    // Benchmark each file with each parsing mode
     for (filename, content) in tja_files {
-        group.bench_function(format!("parse {}", filename), |b| {
-            b.iter(|| {
-                let mut parser = TJAParser::new();
-                parser.parse_str(black_box(&content)).unwrap();
+        for (mode, mode_name) in &modes {
+            group.bench_function(format!("{} - {}", mode_name, filename), |b| {
+                b.iter(|| {
+                    let mut parser = TJAParser::with_mode(mode.clone());
+                    parser.parse_str(black_box(&content)).unwrap();
+                });
             });
-        });
+        }
     }
 
     group.finish();

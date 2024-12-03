@@ -127,9 +127,10 @@ impl Metadata {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Note {
     pub note_type: NoteType,
-    pub scroll: f64,
-    pub delay: f64,
+    pub timestamp: f64,
     pub bpm: f64,
+    pub delay: f64,
+    pub scroll: f64,
     pub gogo: bool,
 }
 

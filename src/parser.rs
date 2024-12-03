@@ -15,6 +15,7 @@ pub struct ParserState {
     pub branch_condition: Option<String>,
     pub parsing_chart: bool,
     pub delay: f64,
+    pub timestamp: f64,
 }
 
 impl ParserState {
@@ -30,6 +31,7 @@ impl ParserState {
             branch_condition: None,
             parsing_chart: false,
             delay: 0.0,
+            timestamp: 0.0,
         }
     }
 
@@ -246,6 +248,7 @@ impl TJAParser {
                     let chart = Chart::new(merged_headers, player_num);
                     self.charts.push(chart);
                     state.parsing_chart = true;
+                    state.timestamp = -self.metadata.as_ref().unwrap().offset;
                 }
                 Directive::End => {
                     state.parsing_chart = false;
@@ -327,6 +330,26 @@ impl TJAParser {
         for c in notes_str.chars() {
             match c {
                 ',' => {
+                    if let Some(segment) = current_chart.segments.last_mut() {
+                        let count = segment.notes.len();
+                        if count > 0 {
+                            for note in segment.notes.iter_mut() {
+                                note.timestamp = state.timestamp + note.delay;
+                                state.timestamp += 60.0 / note.bpm * segment.measure_num as f64
+                                    / segment.measure_den as f64
+                                    * 4.0
+                                    / count as f64;
+                            }
+                        } else {
+                            state.timestamp += 60.0 / state.bpm * segment.measure_num as f64
+                                / segment.measure_den as f64
+                                * 4.0;
+                        }
+                        segment
+                            .notes
+                            .retain(|note| note.note_type != NoteType::Empty);
+                    }
+
                     let new_segment = Segment::new(
                         state.measure_num,
                         state.measure_den,
@@ -340,9 +363,10 @@ impl TJAParser {
                     if let Some(note_type) = NoteType::from_char(c) {
                         let note = Note {
                             note_type,
-                            scroll: state.scroll,
-                            delay: state.delay,
+                            timestamp: -1.0,
                             bpm: state.bpm,
+                            delay: state.delay,
+                            scroll: state.scroll,
                             gogo: state.gogo,
                         };
 

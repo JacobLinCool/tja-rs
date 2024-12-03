@@ -11,11 +11,17 @@ repository = "https://github.com/JacobLinCool/tja-rs"
 [[bin]]
 name = "tja"
 path = "src/bin/tja.rs"
-required-features = []  # Binary works without any features
+bench = false
+
+[[bin]]
+name = "profile"
+path = "src/bin/profile.rs"
+bench = false
 
 [lib]
 name = "tja"
 crate-type = ["cdylib", "rlib"]
+bench = false
 
 [features]
 default = []

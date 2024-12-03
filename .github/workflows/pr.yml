@@ -1,0 +1,20 @@
+name: benchmark pull requests
+
+on:
+    pull_request:
+
+jobs:
+    runBenchmark:
+        name: run benchmark
+        runs-on: macos-latest
+        steps:
+            - uses: actions/checkout@v4
+            - name: Install Rust
+              uses: actions-rs/toolchain@v1
+              with:
+                  toolchain: stable
+            - uses: boa-dev/criterion-compare-action@v3
+              with:
+                  # The name of the branch to compare with. This default uses the branch which is being pulled against
+                  branchName: ${{ github.base_ref }}
+                  token: ${{ secrets.GITHUB_TOKEN }}

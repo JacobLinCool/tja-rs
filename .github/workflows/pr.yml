@@ -6,7 +6,7 @@ on:
 jobs:
     runBenchmark:
         name: run benchmark
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
         steps:
             - uses: actions/checkout@v4
             - name: Install Rust

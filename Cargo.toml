@@ -13,6 +13,11 @@ name = "tja"
 path = "src/bin/tja.rs"
 bench = false
 
+[[bin]]
+name = "profile"
+path = "src/bin/profile.rs"
+bench = false
+
 [lib]
 name = "tja"
 crate-type = ["cdylib", "rlib"]

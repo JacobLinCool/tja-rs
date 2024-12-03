@@ -77,39 +77,50 @@ impl std::str::FromStr for Level {
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(transparent)]
 pub struct Metadata {
-    pub data: HashMap<String, String>,
+    pub bpm: f64,
+    pub offset: f64,
+    pub demostart: f64,
+    pub song_vol: i32,
+    pub se_vol: i32,
+    pub raw: HashMap<String, String>,
 }
 
 impl Metadata {
     pub fn new(data: HashMap<String, String>) -> Self {
-        Self { data }
+        let bpm = data
+            .get("BPM")
+            .and_then(|s| s.parse().ok())
+            .unwrap_or(120.0);
+        let offset = data
+            .get("OFFSET")
+            .and_then(|s| s.parse().ok())
+            .unwrap_or(0.0);
+        let demostart = data
+            .get("DEMOSTART")
+            .and_then(|s| s.parse().ok())
+            .unwrap_or(0.0);
+        let song_vol = data
+            .get("SONGVOL")
+            .and_then(|s| s.parse().ok())
+            .unwrap_or(100);
+        let se_vol = data
+            .get("SEVOL")
+            .and_then(|s| s.parse().ok())
+            .unwrap_or(100);
+
+        Self {
+            raw: data,
+            bpm,
+            offset,
+            demostart,
+            song_vol,
+            se_vol,
+        }
     }
 
     pub fn get(&self, key: &str) -> Option<&String> {
-        self.data.get(key)
-    }
-
-    pub fn bpm(&self) -> f64 {
-        self.data
-            .get("BPM")
-            .and_then(|s| s.parse().ok())
-            .unwrap_or(120.0)
-    }
-
-    pub fn offset(&self) -> f64 {
-        self.data
-            .get("OFFSET")
-            .and_then(|s| s.parse().ok())
-            .unwrap_or(0.0)
-    }
-
-    pub fn demostart(&self) -> f64 {
-        self.data
-            .get("DEMOSTART")
-            .and_then(|s| s.parse().ok())
-            .unwrap_or(0.0)
+        self.raw.get(key)
     }
 }
 

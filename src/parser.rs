@@ -1,29 +1,7 @@
 use crate::directives::{Directive, DirectiveHandler, DirectiveType};
 use crate::types::*;
 use std::collections::HashMap;
-
-pub const DEFAULT_METADATA_KEYS: &[&str] = &[
-    "TITLE",
-    "WAVE",
-    "SUBTITLE",
-    "BPM",
-    "AUTHOR",
-    "OFFSET",
-    "SONGVOL",
-    "SEVOL",
-    "DEMOSTART",
-    "SCOREMODE",
-];
-pub const DEFAULT_HEADER_KEYS: &[&str] = &[
-    "LEVEL",
-    "COURSE",
-    "STYLE",
-    "BALLOON",
-    "SCOREINIT",
-    "SCOREDIFF",
-];
-pub const DEFAULT_INHERITABLE_HEADER_KEYS: &[&str] =
-    &["LEVEL", "COURSE", "STYLE", "SCOREINIT", "SCOREDIFF"];
+use std::collections::HashSet;
 
 #[derive(Debug, Clone)]
 pub struct ParserState {
@@ -67,6 +45,9 @@ pub struct TJAParser {
     state: Option<ParserState>,
     inherited_headers: HashMap<String, String>,
     current_headers: HashMap<String, String>,
+    metadata_keys: HashSet<String>,
+    header_keys: HashSet<String>,
+    inheritable_header_keys: HashSet<String>,
 }
 
 impl Default for TJAParser {
@@ -77,35 +58,67 @@ impl Default for TJAParser {
 
 impl TJAParser {
     pub fn new() -> Self {
+        let metadata_keys: HashSet<String> = vec![
+            "TITLE",
+            "SUBTITLE",
+            "WAVE",
+            "BPM",
+            "OFFSET",
+            "DEMOSTART",
+            "GENRE",
+            "MAKER",
+            "SONGVOL",
+            "SEVOL",
+            "SCOREMODE",
+        ]
+        .into_iter()
+        .map(String::from)
+        .collect();
+
+        let header_keys: HashSet<String> = vec![
+            "COURSE",
+            "LEVEL",
+            "BALLOON",
+            "SCOREINIT",
+            "SCOREDIFF",
+            "STYLE",
+        ]
+        .into_iter()
+        .map(String::from)
+        .collect();
+
+        let inheritable_header_keys: HashSet<String> =
+            vec!["COURSE", "LEVEL", "SCOREINIT", "SCOREDIFF"]
+                .into_iter()
+                .map(String::from)
+                .collect();
+
         Self {
             metadata: None,
             charts: Vec::new(),
             state: None,
             inherited_headers: HashMap::new(),
             current_headers: HashMap::new(),
+            metadata_keys,
+            header_keys,
+            inheritable_header_keys,
         }
     }
 
     pub fn parse_str(&mut self, content: &str) -> Result<(), String> {
-        let mut metadata_dict = HashMap::new();
-        let mut notes_buffer = Vec::new();
+        let mut metadata_dict = HashMap::with_capacity(self.metadata_keys.len());
+        let mut notes_buffer = Vec::with_capacity(content.lines().count() / 4);
 
         // First pass: collect metadata
         for line in content.lines() {
-            let line = line.trim();
-
-            if line.is_empty() || line.starts_with("//") {
-                continue;
-            }
-
-            if line.contains(":") && !line.starts_with("#") {
+            if let Some(line) = normalize_line(line) {
                 self.handle_metadata_or_header(line, &mut metadata_dict);
             }
         }
 
         // Initialize state with metadata
         self.metadata = Some(Metadata::new(metadata_dict));
-        self.state = Some(ParserState::new(self.metadata.as_ref().unwrap().bpm()));
+        self.state = Some(ParserState::new(self.metadata.as_ref().unwrap().bpm));
 
         // Second pass: process everything else
         for line in content.lines() {
@@ -172,13 +185,10 @@ impl TJAParser {
         line: &str,
         metadata_dict: &mut HashMap<String, String>,
     ) {
-        if let Some((key, value)) = line.split_once(':') {
-            let key = key.trim().to_uppercase();
-            let value = value.trim().to_string();
-
-            if DEFAULT_METADATA_KEYS.contains(&key.as_str()) {
+        if let Some((key, value)) = self.parse_metadata_or_header(line) {
+            if self.metadata_keys.contains(&key) {
                 metadata_dict.insert(key, value);
-            } else if DEFAULT_HEADER_KEYS.contains(&key.as_str()) {
+            } else if self.header_keys.contains(&key) {
                 if key == "BALLOON" {
                     let cleaned_value = value
                         .split(',')
@@ -190,11 +200,28 @@ impl TJAParser {
                 } else {
                     self.current_headers.insert(key.clone(), value.clone());
                 }
-                if DEFAULT_INHERITABLE_HEADER_KEYS.contains(&key.as_str()) {
+                if self.inheritable_header_keys.contains(&key) {
                     self.inherited_headers.insert(key, value);
                 }
             }
         }
+    }
+
+    fn parse_metadata_or_header(&self, line: &str) -> Option<(String, String)> {
+        if line.starts_with('#') {
+            return None;
+        }
+
+        line.split_once(':').and_then(|(key, val)| {
+            let key = key.trim();
+            let val = val.trim();
+
+            if key.is_empty() {
+                return None;
+            }
+
+            Some((key.to_uppercase(), val.to_string()))
+        })
     }
 
     fn process_directive(&mut self, command: &str) -> Result<(), String> {
@@ -293,6 +320,10 @@ impl TJAParser {
             current_chart.segments.push(new_segment);
         }
 
+        if let Some(segment) = current_chart.segments.last_mut() {
+            segment.notes.reserve(notes_str.len());
+        }
+
         for c in notes_str.chars() {
             match c {
                 ',' => {
@@ -375,4 +406,25 @@ impl TJAParser {
             charts: self.charts.clone(),
         }
     }
+
+    pub fn add_metadata_key(&mut self, key: &str) {
+        self.metadata_keys.insert(key.to_string());
+    }
+
+    pub fn add_header_key(&mut self, key: &str) {
+        self.header_keys.insert(key.to_string());
+    }
+
+    pub fn add_inheritable_header_key(&mut self, key: &str) {
+        self.inheritable_header_keys.insert(key.to_string());
+    }
+}
+
+fn normalize_line(line: &str) -> Option<&str> {
+    let line = line.split("//").next()?;
+    let line = line.trim();
+    if line.is_empty() {
+        return None;
+    }
+    Some(line)
 }

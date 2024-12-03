@@ -171,3 +171,6 @@ jobs:
               with:
                   command: upload
                   args: --non-interactive --skip-existing wheels-*/*
+            - name: Publish to crates.io
+              if: startsWith(github.ref, 'refs/tags/')
+              run: cargo publish --token ${{ secrets.CARGO_TOKEN }}

@@ -1,4 +1,4 @@
-use crate::{types::*, TJAParser};
+use crate::TJAParser;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]

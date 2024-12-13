@@ -18,6 +18,20 @@ struct AudioData {
     sample_rate: u32,
 }
 
+#[derive(Debug, Clone)]
+enum FilteredNoteType {
+    Don,
+    Ka,
+    DrumRoll { duration: f64 },
+    Balloon { duration: f64 },
+}
+
+#[derive(Debug, Clone)]
+struct FilteredNote {
+    note_type: FilteredNoteType,
+    timestamp: f64,
+}
+
 fn main() {
     let args: Vec<String> = env::args().collect();
     if args.len() < 5 {
@@ -251,11 +265,25 @@ fn merge_audio_files(
         ka_data.sample_rate = sample_rate;
     }
 
-    // Create output buffer with same length as music
-    let mut output_samples = music_data.samples.clone();
+    let output_samples = merge_samples(
+        &music_data.samples,
+        &don_data.samples,
+        &ka_data.samples,
+        sample_rate,
+        course_data,
+        branch,
+    );
 
-    // Process each segment
-    for (seg_idx, segment) in course_data.segments.clone().into_iter().enumerate() {
+    // Write output file using the detected sample rate
+    write_audio_file(output_path, &output_samples, sample_rate)?;
+
+    Ok(())
+}
+
+fn filter_notes(course_data: &tja::Chart, branch: Option<&str>) -> Vec<FilteredNote> {
+    let mut filtered_notes = Vec::new();
+
+    for (seg_idx, segment) in course_data.segments.iter().enumerate() {
         // Skip if branch doesn't match
         if let Some(branch_name) = branch {
             if let Some(segment_branch) = &segment.branch {
@@ -268,11 +296,10 @@ fn merge_audio_files(
         let mut i = 0;
         while i < segment.notes.len() {
             let note = &segment.notes[i];
-            let sample_pos = (note.timestamp * sample_rate as f64) as usize * 2;
 
             match note.note_type {
                 NoteType::Roll | NoteType::RollBig | NoteType::Balloon | NoteType::BalloonAlt => {
-                    // Find the corresponding EndOf note by searching through current and subsequent segments
+                    // Find the corresponding EndOf note
                     let mut end_time: Option<f64> = None;
 
                     // Search in current segment first
@@ -286,7 +313,6 @@ fn merge_audio_files(
                     // If not found in current segment, search in subsequent segments
                     if end_time.is_none() {
                         for future_segment in course_data.segments[seg_idx + 1..].iter() {
-                            // Skip segments that don't match the branch if branch is specified
                             if let Some(branch_name) = branch {
                                 if let Some(segment_branch) = &future_segment.branch {
                                     if segment_branch != branch_name {
@@ -309,25 +335,19 @@ fn merge_audio_files(
 
                     if let Some(end_time) = end_time {
                         let duration = end_time - note.timestamp;
-                        let hits = (duration * 15.0) as usize;
-                        let interval = duration / hits as f64;
-
-                        for hit in 0..hits {
-                            let hit_time = note.timestamp + (interval * hit as f64);
-                            let hit_pos = (hit_time * sample_rate as f64) as usize * 2;
-
-                            let volume = if note.gogo { 1.2 } else { 1.0 };
-                            for (j, &sample) in don_data.samples.iter().enumerate() {
-                                if hit_pos + j >= output_samples.len() {
-                                    break;
-                                }
-                                output_samples[hit_pos + j] = clamp(
-                                    output_samples[hit_pos + j] + (sample * volume),
-                                    -1.0,
-                                    1.0,
-                                );
+                        let filtered_type = match note.note_type {
+                            NoteType::Roll | NoteType::RollBig => {
+                                FilteredNoteType::DrumRoll { duration }
                             }
-                        }
+                            NoteType::Balloon | NoteType::BalloonAlt => {
+                                FilteredNoteType::Balloon { duration }
+                            }
+                            _ => unreachable!(),
+                        };
+                        filtered_notes.push(FilteredNote {
+                            note_type: filtered_type,
+                            timestamp: note.timestamp,
+                        });
                     } else {
                         eprintln!(
                             "Warning: No end marker found for roll/balloon starting at {}s",
@@ -336,30 +356,16 @@ fn merge_audio_files(
                     }
                 }
                 NoteType::Don | NoteType::DonBig => {
-                    let volume = if note.gogo { 1.2 } else { 1.0 };
-                    for (j, &sample) in don_data.samples.iter().enumerate() {
-                        if sample_pos + j >= output_samples.len() {
-                            break;
-                        }
-                        output_samples[sample_pos + j] = clamp(
-                            output_samples[sample_pos + j] + (sample * volume),
-                            -1.0,
-                            1.0,
-                        );
-                    }
+                    filtered_notes.push(FilteredNote {
+                        note_type: FilteredNoteType::Don,
+                        timestamp: note.timestamp,
+                    });
                 }
                 NoteType::Ka | NoteType::KaBig => {
-                    let volume = if note.gogo { 1.2 } else { 1.0 };
-                    for (j, &sample) in ka_data.samples.iter().enumerate() {
-                        if sample_pos + j >= output_samples.len() {
-                            break;
-                        }
-                        output_samples[sample_pos + j] = clamp(
-                            output_samples[sample_pos + j] + (sample * volume),
-                            -1.0,
-                            1.0,
-                        );
-                    }
+                    filtered_notes.push(FilteredNote {
+                        note_type: FilteredNoteType::Ka,
+                        timestamp: note.timestamp,
+                    });
                 }
                 _ => {}
             }
@@ -367,10 +373,72 @@ fn merge_audio_files(
         }
     }
 
-    // Write output file using the detected sample rate
-    write_audio_file(output_path, &output_samples, sample_rate)?;
+    filtered_notes
+}
 
-    Ok(())
+fn merge_samples(
+    music_samples: &[f32],
+    don_samples: &[f32],
+    ka_samples: &[f32],
+    sample_rate: u32,
+    course_data: &tja::Chart,
+    branch: Option<&str>,
+) -> Vec<f32> {
+    let mut output_samples = music_samples.to_vec();
+    let filtered_notes = filter_notes(course_data, branch);
+
+    for note in filtered_notes {
+        let sample_pos = (note.timestamp * sample_rate as f64) as usize * 2;
+
+        match note.note_type {
+            FilteredNoteType::DrumRoll { duration } | FilteredNoteType::Balloon { duration } => {
+                let hits = (duration * 15.0) as usize;
+                let interval = duration / hits as f64;
+
+                for hit in 0..hits {
+                    let hit_time = note.timestamp + (interval * hit as f64);
+                    let hit_pos = (hit_time * sample_rate as f64) as usize * 2;
+
+                    let volume = 1.0;
+                    for (j, &sample) in don_samples.iter().enumerate() {
+                        if hit_pos + j >= output_samples.len() {
+                            break;
+                        }
+                        output_samples[hit_pos + j] =
+                            clamp(output_samples[hit_pos + j] + (sample * volume), -1.0, 1.0);
+                    }
+                }
+            }
+            FilteredNoteType::Don => {
+                let volume = 1.0;
+                for (j, &sample) in don_samples.iter().enumerate() {
+                    if sample_pos + j >= output_samples.len() {
+                        break;
+                    }
+                    output_samples[sample_pos + j] = clamp(
+                        output_samples[sample_pos + j] + (sample * volume),
+                        -1.0,
+                        1.0,
+                    );
+                }
+            }
+            FilteredNoteType::Ka => {
+                let volume = 1.0;
+                for (j, &sample) in ka_samples.iter().enumerate() {
+                    if sample_pos + j >= output_samples.len() {
+                        break;
+                    }
+                    output_samples[sample_pos + j] = clamp(
+                        output_samples[sample_pos + j] + (sample * volume),
+                        -1.0,
+                        1.0,
+                    );
+                }
+            }
+        }
+    }
+
+    output_samples
 }
 
 fn write_audio_file(

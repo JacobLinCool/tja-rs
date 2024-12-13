@@ -1,6 +1,10 @@
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 
+fn is_false(b: &bool) -> bool {
+    !*b
+}
+
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub enum NoteType {
     Empty,      // "0"
@@ -131,6 +135,7 @@ pub struct Note {
     pub bpm: f64,
     pub delay: f64,
     pub scroll: f64,
+    #[serde(skip_serializing_if = "is_false")]
     pub gogo: bool,
 }
 
@@ -201,12 +206,12 @@ impl Chart {
         }
     }
 
-    pub fn level(&self) -> Option<i32> {
-        self.level.as_ref().map(|l| l.value())
-    }
-
     pub fn course(&self) -> Option<&Course> {
         self.course.as_ref()
+    }
+
+    pub fn level(&self) -> Option<i32> {
+        self.level.as_ref().map(|l| l.value())
     }
 }
 

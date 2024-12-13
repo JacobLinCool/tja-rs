@@ -92,7 +92,7 @@ impl From<Chart> for PyChart {
         PyChart {
             player: chart.player,
             course: chart.course.clone().map(|c| format!("{:?}", c)),
-            level: chart.level(),
+            level: chart.level.map(|l| l.value()),
             balloons: chart.balloons,
             headers: chart.headers,
             segments: chart.segments.into_iter().map(PySegment::from).collect(),

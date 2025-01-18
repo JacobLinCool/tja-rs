@@ -60,7 +60,7 @@ maturin develop -F python
                         "course": {
                             "type": ["str", "None"]
                         },
-                        "balloon": {
+                        "balloons": {
                             "type": "list",
                             "items": {
                                 "type": "int"
@@ -69,7 +69,7 @@ maturin develop -F python
                         "level": {
                             "type": ["int", "None"]
                         },
-                        "header": {
+                        "headers": {
                             "type": "dict",
                             "properties": {
                                 "BALLOON": {
@@ -89,7 +89,7 @@ maturin develop -F python
                                 }
                             }
                         },
-                        "segment": {
+                        "segments": {
                             "type": "list",
                             "items": {
                                 "PySegment": {

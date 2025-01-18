@@ -42,6 +42,142 @@ maturin develop -F python
 
 > Python virtual environment is necessary. (e.g. `conda`, `micromamba`, `poetry`, `pixi`)
 
+#### Schema
+```json
+{
+    "title": "PyParsedTJA",
+    "type": "class",
+    "properties": {
+        "charts": {
+            "type": "list",
+            "items": {
+                "PyChart": {
+                    "type": "class",
+                    "properties": {
+                        "player": {
+                            "type": "int"
+                        },
+                        "course": {
+                            "type": ["str", "None"]
+                        },
+                        "balloon": {
+                            "type": "list",
+                            "items": {
+                                "type": "int"
+                            }
+                        },
+                        "level": {
+                            "type": ["int", "None"]
+                        },
+                        "header": {
+                            "type": "dict",
+                            "properties": {
+                                "BALLOON": {
+                                    "type": "string"
+                                },
+                                "COURSE": {
+                                    "type": "string"
+                                },
+                                "LEVEL": {
+                                    "type": "string"
+                                },
+                                "SCOREDIFF": {
+                                    "type": "string"
+                                },
+                                "SCOREINIT": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "segment": {
+                            "type": "list",
+                            "items": {
+                                "PySegment": {
+                                    "type": "class",
+                                    "properties": {
+                                        "measure_num": {
+                                            "type": "int"
+                                        },
+                                        "measure_den": {
+                                            "type": "int"
+                                        },
+                                        "barline": {
+                                            "type": "bool"
+                                        },
+                                        "branch": {
+                                            "type": ["str", "None"]
+                                        },
+                                        "branch_condition": {
+                                            "type": ["str", "None"]
+                                        },
+                                        "notes": {
+                                            "type": "list",
+                                            "items": {
+                                                "PyNote": {
+                                                    "type": "class",
+                                                    "properties": {
+                                                        "note_type": {
+                                                            "type": "str"
+                                                        },
+                                                        "timestamp": {
+                                                            "type": "float"
+                                                        },
+                                                        "scroll": {
+                                                            "type": "float"
+                                                        },
+                                                        "delay": {
+                                                            "type": "float"
+                                                        },
+                                                        "bpm": {
+                                                            "type": "float"
+                                                        },
+                                                        "gogo": {
+                                                            "type": "bool"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    },
+    "metadata": {
+        "title": "dict",
+        "type": "object",
+        "properties": {
+            "SUBTITLE": {
+                "type": "string"
+            },
+            "OFFSET": {
+                "type": "string"
+            },
+            "GENRE": {
+                "type": "string"
+            },
+            "DEMOSTART": {
+                "type": "string"
+            },
+            "BPM": {
+                "type": "string"
+            },
+            "TITLE": {
+                "type": "string"
+            },
+            "WAVE": {
+                "type": "string"
+            }
+        }
+    }
+}
+```
+
 ### WebAssembly
 
 We use `wasm-pack` to build the WebAssembly package. The WebAssembly package requires the `wasm` feature flag to be enabled.

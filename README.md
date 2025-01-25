@@ -28,11 +28,21 @@ cargo build --bin tja
 
 We use `maturin` to build the Python package. The Python package requires the `python` feature flag to be enabled.
 
-To build the Python package, run:
+To build the Python package `.whl`, run: 
+
+```sh
+maturin build
+```
+
+To develop and test, run:
 
 ```sh
 maturin develop -F python
 ```
+
+> Python virtual environment is necessary. (e.g. `conda`, `micromamba`, `poetry`, `pixi`)
+
+> To navigate variable, please check [tja.pyi](./tja.pyi)
 
 ### WebAssembly
 

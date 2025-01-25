@@ -1,7 +1,7 @@
 from enum import Enum
 from typing import Dict, List, Optional
 
-class ParsingMode(Enum):
+class PyParsingMode(Enum):
     MetadataOnly = "MetadataOnly"
     MetadataAndHeader = "MetadataAndHeader"
     Full = "Full"

@@ -149,29 +149,28 @@ maturin develop -F python
         }
     },
     "metadata": {
-        "title": "dict",
-        "type": "object",
-        "properties": {
+        "type": "dict",
+        "keys": {
             "SUBTITLE": {
-                "type": "string"
+                "type": "str"
             },
             "OFFSET": {
-                "type": "string"
+                "type": "str"
             },
             "GENRE": {
-                "type": "string"
+                "type": "str"
             },
             "DEMOSTART": {
-                "type": "string"
+                "type": "str"
             },
             "BPM": {
-                "type": "string"
+                "type": "str"
             },
             "TITLE": {
-                "type": "string"
+                "type": "str"
             },
             "WAVE": {
-                "type": "string"
+                "type": "str"
             }
         }
     }

@@ -71,21 +71,21 @@ maturin develop -F python
                         },
                         "headers": {
                             "type": "dict",
-                            "properties": {
+                            "keys": {
                                 "BALLOON": {
-                                    "type": "string"
+                                    "type": "str"
                                 },
                                 "COURSE": {
-                                    "type": "string"
+                                    "type": "str"
                                 },
                                 "LEVEL": {
-                                    "type": "string"
+                                    "type": "str"
                                 },
                                 "SCOREDIFF": {
-                                    "type": "string"
+                                    "type": "str"
                                 },
                                 "SCOREINIT": {
-                                    "type": "string"
+                                    "type": "str"
                                 }
                             }
                         },

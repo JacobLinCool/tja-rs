@@ -1,64 +1,149 @@
 use crate::{types::*, ParsingMode, TJAParser};
 use pyo3::prelude::*;
+use pyo3::types::{PyDict, PyList};
+use serde::Serialize;
 use std::collections::HashMap;
 
-#[pyclass]
-#[derive(Clone, Debug)]
+fn json_to_py(py: Python, value: &serde_json::Value) -> PyObject {
+    match value {
+        serde_json::Value::Null => py.None(),
+        serde_json::Value::Bool(b) => b.into_py(py),
+        serde_json::Value::Number(n) => {
+            if let Some(i) = n.as_i64() {
+                i.into_py(py)
+            } else if let Some(u) = n.as_u64() {
+                u.into_py(py)
+            } else if let Some(f) = n.as_f64() {
+                f.into_py(py)
+            } else {
+                py.None()
+            }
+        }
+        serde_json::Value::String(s) => s.into_py(py),
+        serde_json::Value::Array(arr) => {
+            let list = PyList::empty(py);
+            for item in arr {
+                list.append(json_to_py(py, item)).unwrap();
+            }
+            list.into_py(py)
+        }
+        serde_json::Value::Object(map) => {
+            let dict = PyDict::new(py);
+            for (k, v) in map {
+                dict.set_item(k, json_to_py(py, v)).unwrap();
+            }
+            dict.into_py(py)
+        }
+    }
+}
+
+#[pyclass(get_all)]
+#[derive(Clone, Debug, Serialize)]
 struct PyNote {
-    #[pyo3(get)]
     note_type: String,
-    #[pyo3(get)]
     timestamp: f64,
-    #[pyo3(get)]
     scroll: f64,
-    #[pyo3(get)]
     delay: f64,
-    #[pyo3(get)]
     bpm: f64,
-    #[pyo3(get)]
     gogo: bool,
 }
 
-#[pyclass]
-#[derive(Clone, Debug)]
+#[pymethods]
+impl PyNote {
+    fn __str__(&self) -> PyResult<String> {
+        serde_json::to_string(self)
+            .map_err(|e| PyErr::new::<pyo3::exceptions::PyValueError, _>(e.to_string()))
+    }
+    fn __repr__(&self) -> PyResult<String> {
+        serde_json::to_string(self)
+            .map_err(|e| PyErr::new::<pyo3::exceptions::PyValueError, _>(e.to_string()))
+    }
+    fn export(&self, py: Python) -> PyResult<PyObject> {
+        let json_value = serde_json::to_value(self)
+            .map_err(|e| PyErr::new::<pyo3::exceptions::PyValueError, _>(e.to_string()))?;
+        Ok(json_to_py(py, &json_value))
+    }
+}
+
+#[pyclass(get_all)]
+#[derive(Clone, Debug, Serialize)]
 struct PySegment {
-    #[pyo3(get)]
+    timestamp: f64,
     measure_num: i32,
-    #[pyo3(get)]
     measure_den: i32,
-    #[pyo3(get)]
     barline: bool,
-    #[pyo3(get)]
     branch: Option<String>,
-    #[pyo3(get)]
     branch_condition: Option<String>,
-    #[pyo3(get)]
     notes: Vec<PyNote>,
 }
 
-#[pyclass]
-#[derive(Clone, Debug)]
+#[pymethods]
+impl PySegment {
+    fn __str__(&self) -> PyResult<String> {
+        serde_json::to_string(self)
+            .map_err(|e| PyErr::new::<pyo3::exceptions::PyValueError, _>(e.to_string()))
+    }
+    fn __repr__(&self) -> PyResult<String> {
+        serde_json::to_string(self)
+            .map_err(|e| PyErr::new::<pyo3::exceptions::PyValueError, _>(e.to_string()))
+    }
+    fn export(&self, py: Python) -> PyResult<PyObject> {
+        let json_value = serde_json::to_value(self)
+            .map_err(|e| PyErr::new::<pyo3::exceptions::PyValueError, _>(e.to_string()))?;
+        Ok(json_to_py(py, &json_value))
+    }
+}
+
+#[pyclass(get_all)]
+#[derive(Clone, Debug, Serialize)]
 struct PyChart {
-    #[pyo3(get)]
     player: i32,
-    #[pyo3(get)]
     course: Option<String>,
-    #[pyo3(get)]
     level: Option<i32>,
-    #[pyo3(get)]
     balloons: Vec<i32>,
-    #[pyo3(get)]
     headers: HashMap<String, String>,
-    #[pyo3(get)]
     segments: Vec<PySegment>,
 }
 
-#[pyclass]
+#[pymethods]
+impl PyChart {
+    fn __str__(&self) -> PyResult<String> {
+        serde_json::to_string(self)
+            .map_err(|e| PyErr::new::<pyo3::exceptions::PyValueError, _>(e.to_string()))
+    }
+    fn __repr__(&self) -> PyResult<String> {
+        serde_json::to_string(self)
+            .map_err(|e| PyErr::new::<pyo3::exceptions::PyValueError, _>(e.to_string()))
+    }
+    fn export(&self, py: Python) -> PyResult<PyObject> {
+        let json_value = serde_json::to_value(self)
+            .map_err(|e| PyErr::new::<pyo3::exceptions::PyValueError, _>(e.to_string()))?;
+        Ok(json_to_py(py, &json_value))
+    }
+}
+
+#[pyclass(get_all)]
+#[derive(Serialize)]
 pub struct PyParsedTJA {
-    #[pyo3(get)]
     metadata: HashMap<String, String>,
-    #[pyo3(get)]
     charts: Vec<PyChart>,
+}
+
+#[pymethods]
+impl PyParsedTJA {
+    fn __str__(&self) -> PyResult<String> {
+        serde_json::to_string(self)
+            .map_err(|e| PyErr::new::<pyo3::exceptions::PyValueError, _>(e.to_string()))
+    }
+    fn __repr__(&self) -> PyResult<String> {
+        serde_json::to_string(self)
+            .map_err(|e| PyErr::new::<pyo3::exceptions::PyValueError, _>(e.to_string()))
+    }
+    fn export(&self, py: Python) -> PyResult<PyObject> {
+        let json_value = serde_json::to_value(self)
+            .map_err(|e| PyErr::new::<pyo3::exceptions::PyValueError, _>(e.to_string()))?;
+        Ok(json_to_py(py, &json_value))
+    }
 }
 
 impl From<Note> for PyNote {
@@ -77,6 +162,7 @@ impl From<Note> for PyNote {
 impl From<Segment> for PySegment {
     fn from(segment: Segment) -> Self {
         PySegment {
+            timestamp: segment.timestamp,
             measure_num: segment.measure_num,
             measure_den: segment.measure_den,
             barline: segment.barline,
@@ -110,11 +196,23 @@ impl From<ParsedTJA> for PyParsedTJA {
 }
 
 #[pyclass(eq)]
-#[derive(Clone, Debug, PartialEq)]
+#[derive(Clone, Debug, PartialEq, Serialize)]
 pub enum PyParsingMode {
     MetadataOnly,
     MetadataAndHeader,
     Full,
+}
+
+#[pymethods]
+impl PyParsingMode {
+    fn __str__(&self) -> PyResult<String> {
+        serde_json::to_string(self)
+            .map_err(|e| PyErr::new::<pyo3::exceptions::PyValueError, _>(e.to_string()))
+    }
+    fn __repr__(&self) -> PyResult<String> {
+        serde_json::to_string(self)
+            .map_err(|e| PyErr::new::<pyo3::exceptions::PyValueError, _>(e.to_string()))
+    }
 }
 
 impl From<PyParsingMode> for ParsingMode {

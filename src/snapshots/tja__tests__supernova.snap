@@ -48,6 +48,7 @@ snapshot_kind: text
       },
       "segments": [
         {
+          "timestamp": 1.1999999641890422,
           "measure_num": 1,
           "measure_den": 4,
           "barline": false,
@@ -71,6 +72,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 1.4830189543360353,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -101,6 +103,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 2.6150949149240015,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -109,6 +112,7 @@ snapshot_kind: text
           "notes": []
         },
         {
+          "timestamp": 3.747170875511963,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -139,6 +143,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 4.8792468360999415,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -162,6 +167,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 6.011322796687924,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -220,6 +226,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 7.143398757275907,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -292,6 +299,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 8.27547471786388,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -336,6 +344,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 9.40755067845182,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -359,6 +368,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 10.53962663903976,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -452,6 +462,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 11.6717025996277,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -545,6 +556,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 12.80377856021564,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -638,6 +650,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 13.93585452080358,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -689,6 +702,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 15.067930481391521,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -775,6 +789,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 16.20000644197946,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -868,6 +883,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 17.3320824025674,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -989,6 +1005,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 18.46415836315534,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -1012,6 +1029,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 19.596234323743282,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -1125,6 +1143,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 20.728310284331222,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -1230,6 +1249,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 21.860386244919162,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -1351,6 +1371,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 22.992462205507103,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -1409,6 +1430,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 24.124538166095043,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -1498,6 +1520,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 25.256614126682983,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -1603,6 +1626,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 26.388690087270923,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -1708,6 +1732,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 27.520766047858864,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -1766,6 +1791,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 28.652842008446804,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -1863,6 +1889,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 29.784917969034744,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -1960,6 +1987,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 30.916993929622684,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -2089,6 +2117,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 32.049069890210625,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -2147,6 +2176,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 33.181145850798565,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -2244,6 +2274,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 34.313221811386505,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -2349,6 +2380,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 35.445297771974445,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -2470,6 +2502,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 36.577373732562386,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -2551,6 +2584,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 37.709449693150326,
           "measure_num": 8,
           "measure_den": 4,
           "barline": true,
@@ -2679,6 +2713,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 39.973601614326206,
           "measure_num": 8,
           "measure_den": 4,
           "barline": true,
@@ -2814,6 +2849,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 42.23775353550209,
           "measure_num": 8,
           "measure_den": 4,
           "barline": true,
@@ -2942,6 +2978,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 44.50190545667797,
           "measure_num": 8,
           "measure_den": 4,
           "barline": true,
@@ -3077,6 +3114,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 46.76605737785385,
           "measure_num": 8,
           "measure_den": 4,
           "barline": true,
@@ -3212,6 +3250,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 49.03020929902973,
           "measure_num": 8,
           "measure_den": 4,
           "barline": true,
@@ -3333,6 +3372,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 51.29436122020561,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -3454,6 +3494,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 52.42643718079355,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -3575,6 +3616,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 53.55851314138149,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -3696,6 +3738,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 54.69058910196943,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -3740,6 +3783,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 55.82266506255737,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -3829,6 +3873,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 56.95474102314531,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -3942,6 +3987,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 58.08681698373325,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -4031,6 +4077,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 59.21889294432119,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -4089,6 +4136,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 60.35096890490913,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -4186,6 +4234,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 61.48304486549707,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -4307,6 +4356,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 62.61512082608501,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -4412,6 +4462,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 63.74719678667295,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -4477,6 +4528,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 64.87927274726115,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -4582,6 +4634,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 66.01134870784944,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -4695,6 +4748,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 67.14342466843772,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -4808,6 +4862,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 68.275500629026,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -4873,6 +4928,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 69.40757658961428,
           "measure_num": 8,
           "measure_den": 4,
           "barline": true,
@@ -4896,6 +4952,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 71.67172851079084,
           "measure_num": 8,
           "measure_den": 4,
           "barline": true,
@@ -4968,6 +5025,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 73.9358804319674,
           "measure_num": 8,
           "measure_den": 4,
           "barline": true,
@@ -5040,6 +5098,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 76.20003235314397,
           "measure_num": 8,
           "measure_den": 4,
           "barline": true,
@@ -5112,6 +5171,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 78.46418427432053,
           "measure_num": 8,
           "measure_den": 4,
           "barline": true,
@@ -5191,6 +5251,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 80.72833619549709,
           "measure_num": 8,
           "measure_den": 4,
           "barline": true,
@@ -5277,6 +5338,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 82.99248811667366,
           "measure_num": 8,
           "measure_den": 4,
           "barline": true,
@@ -5377,6 +5439,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 85.25664003785022,
           "measure_num": 8,
           "measure_den": 4,
           "barline": true,
@@ -5463,6 +5526,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 87.52079195902678,
           "measure_num": 8,
           "measure_den": 4,
           "barline": true,
@@ -5549,6 +5613,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 89.78494388020334,
           "measure_num": 8,
           "measure_den": 4,
           "barline": true,
@@ -5691,6 +5756,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 92.0490958013799,
           "measure_num": 8,
           "measure_den": 4,
           "barline": true,
@@ -5819,6 +5885,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 94.31324772255647,
           "measure_num": 8,
           "measure_den": 4,
           "barline": true,
@@ -5961,6 +6028,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 96.57739964373303,
           "measure_num": 8,
           "measure_den": 4,
           "barline": true,
@@ -6096,6 +6164,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 98.8415515649096,
           "measure_num": 8,
           "measure_den": 4,
           "barline": true,
@@ -6238,6 +6307,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 101.10570348608616,
           "measure_num": 8,
           "measure_den": 4,
           "barline": true,
@@ -6366,6 +6436,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 103.36985540726272,
           "measure_num": 8,
           "measure_den": 4,
           "barline": true,
@@ -6522,6 +6593,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 105.63400732843928,
           "measure_num": 8,
           "measure_den": 4,
           "barline": true,
@@ -6685,6 +6757,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 107.89815924961584,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -6806,6 +6879,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 109.03023521020413,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -6927,6 +7001,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 110.1623111707924,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -7048,6 +7123,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 111.29438713138069,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -7099,6 +7175,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 112.42646309196897,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -7150,6 +7227,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 113.55853905255725,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -7201,6 +7279,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 114.69061501314553,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -7294,6 +7373,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 115.82269097373381,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -7338,6 +7418,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 116.9547669343221,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -7435,6 +7516,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 118.08684289491038,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -7548,6 +7630,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 119.21891885549866,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -7661,6 +7744,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 120.35099481608694,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -7712,6 +7796,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 121.48307077667522,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -7833,6 +7918,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 122.6151467372635,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -7946,6 +8032,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 123.74722269785178,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -8059,6 +8146,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 124.87929865844006,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -8180,6 +8268,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 126.01137461902835,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -8277,6 +8366,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 127.14345057961663,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -8390,6 +8480,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 128.2755265402049,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -8511,6 +8602,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 129.4076025007932,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -8608,6 +8700,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 130.53967846138147,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -8673,6 +8766,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 131.67175442196975,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -8745,6 +8839,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 132.80383038255803,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -8810,6 +8905,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 133.9359063431463,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -8875,6 +8971,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 135.0679823037346,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -8964,6 +9061,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 136.20005826432288,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -9061,6 +9159,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 137.33213422491116,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -9174,6 +9273,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 138.46421018549944,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -9295,6 +9395,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 139.59628614608772,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -9321,6 +9422,7 @@ snapshot_kind: text
       },
       "segments": [
         {
+          "timestamp": 1.1999999641890422,
           "measure_num": 1,
           "measure_den": 4,
           "barline": false,
@@ -9329,6 +9431,7 @@ snapshot_kind: text
           "notes": []
         },
         {
+          "timestamp": 1.4830189543360353,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -9359,6 +9462,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 2.6150949149240015,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -9367,6 +9471,7 @@ snapshot_kind: text
           "notes": []
         },
         {
+          "timestamp": 3.747170875511963,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -9397,6 +9502,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 4.8792468360999415,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -9405,6 +9511,7 @@ snapshot_kind: text
           "notes": []
         },
         {
+          "timestamp": 6.011322796687924,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -9435,6 +9542,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 7.143398757275907,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -9443,6 +9551,7 @@ snapshot_kind: text
           "notes": []
         },
         {
+          "timestamp": 8.27547471786388,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -9473,6 +9582,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 9.40755067845182,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -9496,6 +9606,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 10.53962663903976,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -9568,6 +9679,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 11.6717025996277,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -9647,6 +9759,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 12.80377856021564,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -9719,6 +9832,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 13.93585452080358,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -9742,6 +9856,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 15.067930481391521,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -9814,6 +9929,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 16.20000644197946,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -9893,6 +10009,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 17.3320824025674,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -10014,6 +10131,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 18.46415836315534,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -10037,6 +10155,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 19.596234323743282,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -10118,6 +10237,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 20.728310284331222,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -10199,6 +10319,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 21.860386244919162,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -10288,6 +10409,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 22.992462205507103,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -10325,6 +10447,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 24.124538166095043,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -10406,6 +10529,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 25.256614126682983,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -10503,6 +10627,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 26.388690087270923,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -10592,6 +10717,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 27.520766047858864,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -10643,6 +10769,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 28.652842008446804,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -10724,6 +10851,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 29.784917969034744,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -10805,6 +10933,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 30.916993929622684,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -10894,6 +11023,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 32.049069890210625,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -10945,6 +11075,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 33.181145850798565,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -11026,6 +11157,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 34.313221811386505,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -11123,6 +11255,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 35.445297771974445,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -11244,6 +11377,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 36.577373732562386,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -11317,6 +11451,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 37.709449693150326,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -11382,6 +11517,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 38.841525653738266,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -11447,6 +11583,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 39.973601614326206,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -11512,6 +11649,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 41.10567757491415,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -11570,6 +11708,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 42.23775353550209,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -11635,6 +11774,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 43.36982949609003,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -11700,6 +11840,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 44.50190545667797,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -11765,6 +11906,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 45.63398141726591,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -11795,6 +11937,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 46.76605737785385,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -11853,6 +11996,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 47.89813333844179,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -11939,6 +12083,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 49.03020929902973,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -11997,6 +12142,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 50.16228525961767,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -12069,6 +12215,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 51.29436122020561,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -12162,6 +12309,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 52.42643718079355,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -12255,6 +12403,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 53.55851314138149,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -12376,6 +12525,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 54.69058910196943,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -12420,6 +12570,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 55.82266506255737,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -12485,6 +12636,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 56.95474102314531,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -12590,6 +12742,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 58.08681698373325,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -12663,6 +12816,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 59.21889294432119,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -12714,6 +12868,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 60.35096890490913,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -12795,6 +12950,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 61.48304486549707,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -12900,6 +13056,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 62.61512082608501,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -12981,6 +13138,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 63.74719678667295,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -13039,6 +13197,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 64.87927274726115,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -13144,6 +13303,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 66.01134870784944,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -13257,6 +13417,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 67.14342466843772,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -13394,6 +13555,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 68.275500629026,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -13419,6 +13581,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 69.40757658961428,
           "measure_num": 8,
           "measure_den": 4,
           "barline": true,
@@ -13442,6 +13605,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 71.67172851079084,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -13472,6 +13636,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 72.80380447137912,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -13509,6 +13674,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 73.9358804319674,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -13539,6 +13705,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 75.06795639255569,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -13583,6 +13750,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 76.20003235314397,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -13613,6 +13781,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 77.33210831373225,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -13650,6 +13819,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 78.46418427432053,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -13680,6 +13850,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 79.59626023490881,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -13724,6 +13895,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 80.72833619549709,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -13761,6 +13933,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 81.86041215608537,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -13812,6 +13985,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 82.99248811667366,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -13849,6 +14023,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 84.12456407726194,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -13893,6 +14068,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 85.25664003785022,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -13930,6 +14106,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 86.3887159984385,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -13981,6 +14158,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 87.52079195902678,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -14018,6 +14196,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 88.65286791961506,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -14055,6 +14234,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 89.78494388020334,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -14127,6 +14307,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 90.91701984079162,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -14199,6 +14380,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 92.0490958013799,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -14271,6 +14453,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 93.18117176196819,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -14322,6 +14505,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 94.31324772255647,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -14394,6 +14578,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 95.44532368314475,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -14466,6 +14651,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 96.57739964373303,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -14517,6 +14703,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 97.70947560432131,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -14582,6 +14769,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 98.8415515649096,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -14654,6 +14842,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 99.97362752549788,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -14726,6 +14915,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 101.10570348608616,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -14798,6 +14988,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 102.23777944667444,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -14849,6 +15040,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 103.36985540726272,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -14921,6 +15113,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 104.501931367851,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -15000,6 +15193,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 105.63400732843928,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -15086,6 +15280,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 106.76608328902756,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -15109,6 +15304,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 107.89815924961584,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -15202,6 +15398,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 109.03023521020413,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -15295,6 +15492,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 110.1623111707924,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -15416,6 +15614,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 111.29438713138069,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -15439,6 +15638,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 112.42646309196897,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -15490,6 +15690,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 113.55853905255725,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -15541,6 +15742,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 114.69061501314553,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -15634,6 +15836,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 115.82269097373381,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -15685,6 +15888,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 116.9547669343221,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -15798,6 +16002,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 118.08684289491038,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -15895,6 +16100,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 119.21891885549866,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -16000,6 +16206,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 120.35099481608694,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -16051,6 +16258,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 121.48307077667522,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -16148,6 +16356,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 122.6151467372635,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -16253,6 +16462,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 123.74722269785178,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -16342,6 +16552,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 124.87929865844006,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -16439,6 +16650,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 126.01137461902835,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -16536,6 +16748,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 127.14345057961663,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -16633,6 +16846,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 128.2755265402049,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -16738,6 +16952,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 129.4076025007932,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -16819,6 +17034,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 130.53967846138147,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -16891,6 +17107,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 131.67175442196975,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -16963,6 +17180,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 132.80383038255803,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -17014,6 +17232,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 133.9359063431463,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -17072,6 +17291,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 135.0679823037346,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -17153,6 +17373,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 136.20005826432288,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -17242,6 +17463,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 137.33213422491116,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -17355,6 +17577,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 138.46421018549944,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -17452,6 +17675,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 139.59628614608772,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -17482,6 +17706,7 @@ snapshot_kind: text
       },
       "segments": [
         {
+          "timestamp": 1.1999999641890422,
           "measure_num": 1,
           "measure_den": 4,
           "barline": false,
@@ -17490,6 +17715,7 @@ snapshot_kind: text
           "notes": []
         },
         {
+          "timestamp": 1.4830189543360353,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -17520,6 +17746,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 2.6150949149240015,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -17528,6 +17755,7 @@ snapshot_kind: text
           "notes": []
         },
         {
+          "timestamp": 3.747170875511963,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -17558,6 +17786,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 4.8792468360999415,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -17566,6 +17795,7 @@ snapshot_kind: text
           "notes": []
         },
         {
+          "timestamp": 6.011322796687924,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -17596,6 +17826,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 7.143398757275907,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -17604,6 +17835,7 @@ snapshot_kind: text
           "notes": []
         },
         {
+          "timestamp": 8.27547471786388,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -17634,6 +17866,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 9.40755067845182,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -17650,6 +17883,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 10.53962663903976,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -17694,6 +17928,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 11.6717025996277,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -17752,6 +17987,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 12.80377856021564,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -17796,6 +18032,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 13.93585452080358,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -17819,6 +18056,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 15.067930481391521,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -17877,6 +18115,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 16.20000644197946,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -17914,6 +18153,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 17.3320824025674,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -17937,6 +18177,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 18.46415836315534,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -17953,6 +18194,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 19.596234323743282,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -18010,6 +18252,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 20.728310284331222,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -18067,6 +18310,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 21.860386244919162,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -18116,6 +18360,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 22.992462205507103,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -18153,6 +18398,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 24.124538166095043,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -18210,6 +18456,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 25.256614126682983,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -18275,6 +18522,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 26.388690087270923,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -18324,6 +18572,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 27.520766047858864,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -18347,6 +18596,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 28.652842008446804,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -18404,6 +18654,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 29.784917969034744,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -18461,6 +18712,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 30.916993929622684,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -18510,6 +18762,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 32.049069890210625,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -18540,6 +18793,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 33.181145850798565,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -18597,6 +18851,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 34.313221811386505,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -18662,6 +18917,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 35.445297771974445,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -18727,6 +18983,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 36.577373732562386,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -18752,6 +19009,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 37.709449693150326,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -18796,6 +19054,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 38.841525653738266,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -18840,6 +19099,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 39.973601614326206,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -18884,6 +19144,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 41.10567757491415,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -18921,6 +19182,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 42.23775353550209,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -18965,6 +19227,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 43.36982949609003,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -19009,6 +19272,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 44.50190545667797,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -19053,6 +19317,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 45.63398141726591,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -19076,6 +19341,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 46.76605737785385,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -19127,6 +19393,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 47.89813333844179,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -19157,6 +19424,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 49.03020929902973,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -19208,6 +19476,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 50.16228525961767,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -19252,6 +19521,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 51.29436122020561,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -19268,6 +19538,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 52.42643718079355,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -19276,6 +19547,7 @@ snapshot_kind: text
           "notes": []
         },
         {
+          "timestamp": 53.55851314138149,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -19284,6 +19556,7 @@ snapshot_kind: text
           "notes": []
         },
         {
+          "timestamp": 54.69058910196943,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -19300,6 +19573,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 55.82266506255737,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -19357,6 +19631,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 56.95474102314531,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -19422,6 +19697,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 58.08681698373325,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -19479,6 +19755,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 59.21889294432119,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -19516,6 +19793,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 60.35096890490913,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -19573,6 +19851,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 61.48304486549707,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -19638,6 +19917,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 62.61512082608501,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -19703,6 +19983,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 63.74719678667295,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -19740,6 +20021,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 64.87927274726115,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -19789,6 +20071,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 66.01134870784944,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -19846,6 +20129,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 67.14342466843772,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -19919,6 +20203,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 68.275500629026,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -19944,6 +20229,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 69.40757658961428,
           "measure_num": 8,
           "measure_den": 4,
           "barline": true,
@@ -19967,6 +20253,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 71.67172851079084,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -19990,6 +20277,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 72.80380447137912,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -20013,6 +20301,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 73.9358804319674,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -20036,6 +20325,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 75.06795639255569,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -20059,6 +20349,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 76.20003235314397,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -20082,6 +20373,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 77.33210831373225,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -20105,6 +20397,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 78.46418427432053,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -20128,6 +20421,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 79.59626023490881,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -20165,6 +20459,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 80.72833619549709,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -20202,6 +20497,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 81.86041215608537,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -20246,6 +20542,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 82.99248811667366,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -20283,6 +20580,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 84.12456407726194,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -20327,6 +20625,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 85.25664003785022,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -20364,6 +20663,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 86.3887159984385,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -20408,6 +20708,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 87.52079195902678,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -20445,6 +20746,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 88.65286791961506,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -20482,6 +20784,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 89.78494388020334,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -20540,6 +20843,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 90.91701984079162,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -20570,6 +20874,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 92.0490958013799,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -20628,6 +20933,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 93.18117176196819,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -20672,6 +20978,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 94.31324772255647,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -20730,6 +21037,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 95.44532368314475,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -20760,6 +21068,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 96.57739964373303,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -20804,6 +21113,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 97.70947560432131,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -20855,6 +21165,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 98.8415515649096,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -20913,6 +21224,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 99.97362752549788,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -20943,6 +21255,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 101.10570348608616,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -21001,6 +21314,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 102.23777944667444,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -21045,6 +21359,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 103.36985540726272,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -21089,6 +21404,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 104.501931367851,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -21140,6 +21456,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 105.63400732843928,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -21184,6 +21501,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 106.76608328902756,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -21200,6 +21518,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 107.89815924961584,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -21216,6 +21535,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 109.03023521020413,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -21224,6 +21544,7 @@ snapshot_kind: text
           "notes": []
         },
         {
+          "timestamp": 110.1623111707924,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -21232,6 +21553,7 @@ snapshot_kind: text
           "notes": []
         },
         {
+          "timestamp": 111.29438713138069,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -21248,6 +21570,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 112.42646309196897,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -21292,6 +21615,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 113.55853905255725,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -21343,6 +21667,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 114.69061501314553,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -21366,6 +21691,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 115.82269097373381,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -21374,6 +21700,7 @@ snapshot_kind: text
           "notes": []
         },
         {
+          "timestamp": 116.9547669343221,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -21439,6 +21766,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 118.08684289491038,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -21512,6 +21840,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 119.21891885549866,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -21569,6 +21898,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 120.35099481608694,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -21592,6 +21922,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 121.48307077667522,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -21641,6 +21972,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 122.6151467372635,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -21706,6 +22038,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 123.74722269785178,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -21771,6 +22104,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 124.87929865844006,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -21820,6 +22154,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 126.01137461902835,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -21869,6 +22204,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 127.14345057961663,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -21934,6 +22270,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 128.2755265402049,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -21999,6 +22336,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 129.4076025007932,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -22056,6 +22394,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 130.53967846138147,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -22114,6 +22453,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 131.67175442196975,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -22151,6 +22491,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 132.80383038255803,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -22195,6 +22536,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 133.9359063431463,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -22246,6 +22588,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 135.0679823037346,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -22295,6 +22638,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 136.20005826432288,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -22360,6 +22704,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 137.33213422491116,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -22425,6 +22770,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 138.46421018549944,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -22450,6 +22796,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 139.59628614608772,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -22480,6 +22827,7 @@ snapshot_kind: text
       },
       "segments": [
         {
+          "timestamp": 1.1999999641890422,
           "measure_num": 1,
           "measure_den": 4,
           "barline": false,
@@ -22488,6 +22836,7 @@ snapshot_kind: text
           "notes": []
         },
         {
+          "timestamp": 1.4830189543360353,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -22518,6 +22867,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 2.6150949149240015,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -22526,6 +22876,7 @@ snapshot_kind: text
           "notes": []
         },
         {
+          "timestamp": 3.747170875511963,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -22556,6 +22907,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 4.8792468360999415,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -22564,6 +22916,7 @@ snapshot_kind: text
           "notes": []
         },
         {
+          "timestamp": 6.011322796687924,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -22594,6 +22947,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 7.143398757275907,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -22602,6 +22956,7 @@ snapshot_kind: text
           "notes": []
         },
         {
+          "timestamp": 8.27547471786388,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -22632,6 +22987,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 9.40755067845182,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -22648,6 +23004,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 10.53962663903976,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -22692,6 +23049,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 11.6717025996277,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -22736,6 +23094,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 12.80377856021564,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -22780,6 +23139,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 13.93585452080358,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -22796,6 +23156,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 15.067930481391521,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -22847,6 +23208,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 16.20000644197946,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -22884,6 +23246,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 17.3320824025674,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -22907,6 +23270,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 18.46415836315534,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -22923,6 +23287,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 19.596234323743282,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -22972,6 +23337,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 20.728310284331222,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -23029,6 +23395,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 21.860386244919162,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -23078,6 +23445,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 22.992462205507103,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -23115,6 +23483,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 24.124538166095043,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -23164,6 +23533,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 25.256614126682983,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -23221,6 +23591,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 26.388690087270923,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -23262,6 +23633,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 27.520766047858864,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -23285,6 +23657,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 28.652842008446804,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -23334,6 +23707,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 29.784917969034744,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -23391,6 +23765,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 30.916993929622684,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -23440,6 +23815,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 32.049069890210625,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -23470,6 +23846,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 33.181145850798565,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -23519,6 +23896,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 34.313221811386505,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -23576,6 +23954,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 35.445297771974445,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -23625,6 +24004,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 36.577373732562386,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -23650,6 +24030,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 37.709449693150326,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -23687,6 +24068,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 38.841525653738266,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -23724,6 +24106,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 39.973601614326206,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -23761,6 +24144,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 41.10567757491415,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -23791,6 +24175,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 42.23775353550209,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -23828,6 +24213,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 43.36982949609003,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -23865,6 +24251,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 44.50190545667797,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -23902,6 +24289,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 45.63398141726591,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -23925,6 +24313,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 46.76605737785385,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -23955,6 +24344,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 47.89813333844179,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -23985,6 +24375,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 49.03020929902973,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -24015,6 +24406,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 50.16228525961767,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -24059,6 +24451,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 51.29436122020561,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -24075,6 +24468,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 52.42643718079355,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -24083,6 +24477,7 @@ snapshot_kind: text
           "notes": []
         },
         {
+          "timestamp": 53.55851314138149,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -24091,6 +24486,7 @@ snapshot_kind: text
           "notes": []
         },
         {
+          "timestamp": 54.69058910196943,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -24107,6 +24503,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 55.82266506255737,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -24156,6 +24553,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 56.95474102314531,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -24213,6 +24611,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 58.08681698373325,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -24262,6 +24661,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 59.21889294432119,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -24278,6 +24678,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 60.35096890490913,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -24327,6 +24728,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 61.48304486549707,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -24384,6 +24786,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 62.61512082608501,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -24441,6 +24844,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 63.74719678667295,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -24478,6 +24882,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 64.87927274726115,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -24519,6 +24924,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 66.01134870784944,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -24560,6 +24966,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 67.14342466843772,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -24617,6 +25024,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 68.275500629026,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -24642,6 +25050,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 69.40757658961428,
           "measure_num": 8,
           "measure_den": 4,
           "barline": true,
@@ -24665,6 +25074,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 71.67172851079084,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -24688,6 +25098,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 72.80380447137912,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -24704,6 +25115,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 73.9358804319674,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -24727,6 +25139,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 75.06795639255569,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -24743,6 +25156,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 76.20003235314397,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -24766,6 +25180,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 77.33210831373225,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -24789,6 +25204,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 78.46418427432053,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -24812,6 +25228,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 79.59626023490881,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -24842,6 +25259,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 80.72833619549709,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -24872,6 +25290,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 81.86041215608537,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -24902,6 +25321,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 82.99248811667366,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -24932,6 +25352,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 84.12456407726194,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -24962,6 +25383,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 85.25664003785022,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -24992,6 +25414,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 86.3887159984385,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -25022,6 +25445,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 87.52079195902678,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -25052,6 +25476,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 88.65286791961506,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -25068,6 +25493,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 89.78494388020334,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -25112,6 +25538,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 90.91701984079162,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -25142,6 +25569,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 92.0490958013799,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -25186,6 +25614,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 93.18117176196819,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -25223,6 +25652,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 94.31324772255647,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -25267,6 +25697,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 95.44532368314475,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -25297,6 +25728,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 96.57739964373303,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -25341,6 +25773,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 97.70947560432131,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -25378,6 +25811,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 98.8415515649096,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -25422,6 +25856,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 99.97362752549788,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -25452,6 +25887,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 101.10570348608616,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -25496,6 +25932,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 102.23777944667444,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -25533,6 +25970,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 103.36985540726272,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -25577,6 +26015,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 104.501931367851,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -25621,6 +26060,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 105.63400732843928,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -25665,6 +26105,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 106.76608328902756,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -25681,6 +26122,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 107.89815924961584,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -25697,6 +26139,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 109.03023521020413,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -25705,6 +26148,7 @@ snapshot_kind: text
           "notes": []
         },
         {
+          "timestamp": 110.1623111707924,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -25713,6 +26157,7 @@ snapshot_kind: text
           "notes": []
         },
         {
+          "timestamp": 111.29438713138069,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -25729,6 +26174,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 112.42646309196897,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -25773,6 +26219,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 113.55853905255725,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -25817,6 +26264,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 114.69061501314553,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -25840,6 +26288,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 115.82269097373381,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -25848,6 +26297,7 @@ snapshot_kind: text
           "notes": []
         },
         {
+          "timestamp": 116.9547669343221,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -25897,6 +26347,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 118.08684289491038,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -25962,6 +26413,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 119.21891885549866,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -26019,6 +26471,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 120.35099481608694,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -26042,6 +26495,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 121.48307077667522,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -26091,6 +26545,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 122.6151467372635,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -26132,6 +26587,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 123.74722269785178,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -26181,6 +26637,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 124.87929865844006,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -26222,6 +26679,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 126.01137461902835,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -26271,6 +26729,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 127.14345057961663,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -26312,6 +26771,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 128.2755265402049,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -26361,6 +26821,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 129.4076025007932,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -26410,6 +26871,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 130.53967846138147,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -26454,6 +26916,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 131.67175442196975,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -26491,6 +26954,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 132.80383038255803,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -26535,6 +26999,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 133.9359063431463,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -26579,6 +27044,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 135.0679823037346,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -26628,6 +27094,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 136.20005826432288,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -26677,6 +27144,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 137.33213422491116,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -26734,6 +27202,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 138.46421018549944,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -26759,6 +27228,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 139.59628614608772,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -26789,6 +27259,7 @@ snapshot_kind: text
       },
       "segments": [
         {
+          "timestamp": 1.1999999641890422,
           "measure_num": 1,
           "measure_den": 4,
           "barline": false,
@@ -26797,6 +27268,7 @@ snapshot_kind: text
           "notes": []
         },
         {
+          "timestamp": 1.4830189543360353,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -26827,6 +27299,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 2.6150949149240015,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -26835,6 +27308,7 @@ snapshot_kind: text
           "notes": []
         },
         {
+          "timestamp": 3.747170875511963,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -26865,6 +27339,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 4.8792468360999415,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -26873,6 +27348,7 @@ snapshot_kind: text
           "notes": []
         },
         {
+          "timestamp": 6.011322796687924,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -26903,6 +27379,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 7.143398757275907,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -26911,6 +27388,7 @@ snapshot_kind: text
           "notes": []
         },
         {
+          "timestamp": 8.27547471786388,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -26941,6 +27419,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 9.40755067845182,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -26949,6 +27428,7 @@ snapshot_kind: text
           "notes": []
         },
         {
+          "timestamp": 10.53962663903976,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -26979,6 +27459,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 11.6717025996277,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27009,6 +27490,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 12.80377856021564,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27046,6 +27528,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 13.93585452080358,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27062,6 +27545,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 15.067930481391521,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27092,6 +27576,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 16.20000644197946,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27122,6 +27607,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 17.3320824025674,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27145,6 +27631,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 18.46415836315534,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27153,6 +27640,7 @@ snapshot_kind: text
           "notes": []
         },
         {
+          "timestamp": 19.596234323743282,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27186,6 +27674,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 20.728310284331222,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27219,6 +27708,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 21.860386244919162,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27260,6 +27750,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 22.992462205507103,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27283,6 +27774,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 24.124538166095043,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27316,6 +27808,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 25.256614126682983,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27349,6 +27842,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 26.388690087270923,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27390,6 +27884,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 27.520766047858864,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27413,6 +27908,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 28.652842008446804,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27446,6 +27942,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 29.784917969034744,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27479,6 +27976,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 30.916993929622684,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27520,6 +28018,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 32.049069890210625,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27550,6 +28049,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 33.181145850798565,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27583,6 +28083,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 34.313221811386505,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27616,6 +28117,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 35.445297771974445,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27657,6 +28159,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 36.577373732562386,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27682,6 +28185,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 37.709449693150326,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27712,6 +28216,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 38.841525653738266,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27735,6 +28240,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 39.973601614326206,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27758,6 +28264,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 41.10567757491415,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27781,6 +28288,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 42.23775353550209,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27811,6 +28319,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 43.36982949609003,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27834,6 +28343,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 44.50190545667797,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27857,6 +28367,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 45.63398141726591,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27880,6 +28391,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 46.76605737785385,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27903,6 +28415,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 47.89813333844179,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27926,6 +28439,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 49.03020929902973,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27949,6 +28463,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 50.16228525961767,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27972,6 +28487,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 51.29436122020561,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27988,6 +28504,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 52.42643718079355,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -27996,6 +28513,7 @@ snapshot_kind: text
           "notes": []
         },
         {
+          "timestamp": 53.55851314138149,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28004,6 +28522,7 @@ snapshot_kind: text
           "notes": []
         },
         {
+          "timestamp": 54.69058910196943,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28020,6 +28539,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 55.82266506255737,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28053,6 +28573,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 56.95474102314531,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28086,6 +28607,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 58.08681698373325,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28127,6 +28649,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 59.21889294432119,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28143,6 +28666,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 60.35096890490913,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28176,6 +28700,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 61.48304486549707,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28209,6 +28734,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 62.61512082608501,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28250,6 +28776,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 63.74719678667295,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28266,6 +28793,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 64.87927274726115,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28299,6 +28827,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 66.01134870784944,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28332,6 +28861,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 67.14342466843772,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28373,6 +28903,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 68.275500629026,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28390,6 +28921,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 69.40757658961428,
           "measure_num": 8,
           "measure_den": 4,
           "barline": true,
@@ -28413,6 +28945,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 71.67172851079084,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28436,6 +28969,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 72.80380447137912,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28452,6 +28986,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 73.9358804319674,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28475,6 +29010,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 75.06795639255569,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28491,6 +29027,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 76.20003235314397,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28514,6 +29051,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 77.33210831373225,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28530,6 +29068,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 78.46418427432053,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28553,6 +29092,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 79.59626023490881,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28569,6 +29109,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 80.72833619549709,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28599,6 +29140,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 81.86041215608537,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28622,6 +29164,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 82.99248811667366,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28652,6 +29195,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 84.12456407726194,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28675,6 +29219,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 85.25664003785022,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28705,6 +29250,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 86.3887159984385,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28728,6 +29274,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 87.52079195902678,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28758,6 +29305,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 88.65286791961506,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28774,6 +29322,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 89.78494388020334,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28804,6 +29353,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 90.91701984079162,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28820,6 +29370,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 92.0490958013799,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28850,6 +29401,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 93.18117176196819,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28866,6 +29418,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 94.31324772255647,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28896,6 +29449,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 95.44532368314475,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28912,6 +29466,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 96.57739964373303,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28942,6 +29497,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 97.70947560432131,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28958,6 +29514,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 98.8415515649096,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -28988,6 +29545,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 99.97362752549788,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -29011,6 +29569,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 101.10570348608616,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -29041,6 +29600,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 102.23777944667444,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -29064,6 +29624,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 103.36985540726272,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -29094,6 +29655,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 104.501931367851,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -29124,6 +29686,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 105.63400732843928,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -29161,6 +29724,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 106.76608328902756,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -29177,6 +29741,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 107.89815924961584,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -29193,6 +29758,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 109.03023521020413,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -29201,6 +29767,7 @@ snapshot_kind: text
           "notes": []
         },
         {
+          "timestamp": 110.1623111707924,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -29209,6 +29776,7 @@ snapshot_kind: text
           "notes": []
         },
         {
+          "timestamp": 111.29438713138069,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -29225,6 +29793,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 112.42646309196897,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -29255,6 +29824,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 113.55853905255725,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -29285,6 +29855,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 114.69061501314553,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -29308,6 +29879,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 115.82269097373381,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -29316,6 +29888,7 @@ snapshot_kind: text
           "notes": []
         },
         {
+          "timestamp": 116.9547669343221,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -29357,6 +29930,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 118.08684289491038,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -29390,6 +29964,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 119.21891885549866,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -29431,6 +30006,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 120.35099481608694,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -29454,6 +30030,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 121.48307077667522,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -29487,6 +30064,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 122.6151467372635,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -29520,6 +30098,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 123.74722269785178,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -29561,6 +30140,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 124.87929865844006,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -29594,6 +30174,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 126.01137461902835,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -29627,6 +30208,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 127.14345057961663,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -29660,6 +30242,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 128.2755265402049,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -29701,6 +30284,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 129.4076025007932,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -29734,6 +30318,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 130.53967846138147,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -29764,6 +30349,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 131.67175442196975,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -29787,6 +30373,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 132.80383038255803,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -29810,6 +30397,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 133.9359063431463,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -29833,6 +30421,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 135.0679823037346,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -29874,6 +30463,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 136.20005826432288,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -29915,6 +30505,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 137.33213422491116,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -29956,6 +30547,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 138.46421018549944,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,
@@ -29981,6 +30573,7 @@ snapshot_kind: text
           ]
         },
         {
+          "timestamp": 139.59628614608772,
           "measure_num": 4,
           "measure_den": 4,
           "barline": true,

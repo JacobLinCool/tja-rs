@@ -21,6 +21,7 @@ export interface Chart {
 }
 
 export interface Segment {
+    timestamp: number;
     measure_num: number;
     measure_den: number;
     barline: boolean;

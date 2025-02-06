@@ -384,6 +384,7 @@ impl TJAParser {
 
                         if state.current_segment.is_none() {
                             state.current_segment = Some(Segment::new(
+                                state.timestamp + state.delay,
                                 state.measure_num,
                                 state.measure_den,
                                 state.barline,

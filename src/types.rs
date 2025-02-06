@@ -141,6 +141,7 @@ pub struct Note {
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Segment {
+    pub timestamp: f64,
     pub measure_num: i32,
     pub measure_den: i32,
     pub barline: bool,
@@ -151,6 +152,7 @@ pub struct Segment {
 
 impl Segment {
     pub fn new(
+        timestamp: f64,
         measure_num: i32,
         measure_den: i32,
         barline: bool,
@@ -158,6 +160,7 @@ impl Segment {
         branch_condition: Option<String>,
     ) -> Self {
         Self {
+            timestamp,
             measure_num,
             measure_den,
             barline,

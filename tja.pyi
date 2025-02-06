@@ -1,5 +1,7 @@
 from enum import Enum
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Literal
+
+PyChartCourse = Literal["Easy", "Normal", "Hard", "Oni", "Ura"]
 
 class PyParsingMode(Enum):
     MetadataOnly = "MetadataOnly"
@@ -32,7 +34,7 @@ class PySegment:
 
 class PyChart:
     player: int
-    course: Optional[str]
+    course: Optional[PyChartCourse]
     level: Optional[int]
     balloons: List[int]
     headers: Dict[str, str]

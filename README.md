@@ -4,7 +4,9 @@ An efficient TJA file parser, written in Rust, that supports Rust, Python, and W
 
 It is highly optimized for speed and includes features such as a synthesizer for synthesizing music along with don/ka sound effects from a TJA file.
 
-It's fast! [Check out the benchmark](https://jacoblincool.github.io/tja-rs/report/).
+It's fast! (Parse thousands of TJAs in less than 1 second) [Check out the benchmark](https://jacoblincool.github.io/tja-rs/report/).
+
+You can also use different parsing modes (e.g. metadata-only or metadata-and-header mode) to make it even faster.
 
 ## Building Instructions
 

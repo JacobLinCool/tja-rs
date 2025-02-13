@@ -65,6 +65,7 @@ pub struct TJAParser {
     metadata: Option<Metadata>,
     charts: Vec<Chart>,
     state: Option<ParserState>,
+    state_internal: Option<ParserState>,
     inherited_headers: HashMap<String, String>,
     current_headers: HashMap<String, String>,
     metadata_keys: HashSet<String>,
@@ -120,6 +121,7 @@ impl TJAParser {
             metadata: None,
             charts: Vec::new(),
             state: None,
+            state_internal: None,
             inherited_headers: HashMap::new(),
             current_headers: HashMap::new(),
             metadata_keys,
@@ -140,6 +142,7 @@ impl TJAParser {
         let mut notes_buffer = Vec::new();
 
         self.state = Some(ParserState::new(120.0));
+        self.state_internal = Some(ParserState::new(120.0));
 
         for line in content.lines() {
             if let Some(line) = normalize_line(line) {
@@ -151,6 +154,7 @@ impl TJAParser {
                                 if key == "BPM" {
                                     if let Ok(bpm) = value.parse::<f64>() {
                                         state.bpm = bpm;
+                                        self.state_internal.as_mut().unwrap().bpm = bpm;
                                     }
                                 }
                                 metadata_dict.insert(key, value.clone());
@@ -289,6 +293,24 @@ impl TJAParser {
                     self.charts.push(chart);
                     state.parsing_chart = true;
                     state.timestamp = -self.metadata.as_ref().unwrap().offset;
+                    state.bpm = self.state_internal.as_ref().unwrap().bpm;
+                    state.scroll = self.state_internal.as_ref().unwrap().scroll;
+                    state.gogo = self.state_internal.as_ref().unwrap().gogo;
+                    state.barline = self.state_internal.as_ref().unwrap().barline;
+                    state.measure_num = self.state_internal.as_ref().unwrap().measure_num;
+                    state.measure_den = self.state_internal.as_ref().unwrap().measure_den;
+                    state.branch_condition = self
+                        .state_internal
+                        .as_ref()
+                        .unwrap()
+                        .branch_condition
+                        .clone();
+                    state.current_branch =
+                        self.state_internal.as_ref().unwrap().current_branch.clone();
+                    state.delay = self.state_internal.as_ref().unwrap().delay;
+                    state.timestamp_branch_start =
+                        self.state_internal.as_ref().unwrap().timestamp_branch_start;
+                    state.current_segment = None;
                 }
                 Directive::End => {
                     if let Some(mut segment) = state.current_segment.take() {

@@ -2,6 +2,9 @@ from enum import Enum
 from typing import Any, Dict, List, Optional, Literal
 
 PyChartCourse = Literal["Easy", "Normal", "Hard", "Oni", "Ura"]
+PyNoteType = Literal[
+    "Don", "Ka", "DonBig", "KaBig", "Roll", "RollBig", "Balloon", "EndOf", "BalloonAlt"
+]
 
 class PyParsingMode(Enum):
     MetadataOnly = "MetadataOnly"
@@ -11,7 +14,7 @@ class PyParsingMode(Enum):
     def __repr__(self) -> str: ...
 
 class PyNote:
-    note_type: str
+    note_type: PyNoteType
     timestamp: float
     scroll: float
     delay: float

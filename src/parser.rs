@@ -391,10 +391,10 @@ impl TJAParser {
             .last_mut()
             .ok_or_else(|| "No current chart".to_string())?;
 
-        for c in notes_str.chars() {
-            match c {
-                '0'..='9' => {
-                    if let Some(note_type) = NoteType::from_char(c) {
+        for b in notes_str.as_bytes() {
+            match b {
+                b'0'..=b'9' => {
+                    if let Some(note_type) = NoteType::from_char(*b as char) {
                         let note = Note {
                             note_type,
                             timestamp: -1.0,
@@ -420,7 +420,7 @@ impl TJAParser {
                         }
                     }
                 }
-                ',' => {
+                b',' => {
                     if let Some(mut segment) = state.current_segment.take() {
                         calculate_note_timestamp(state, &mut segment);
                         current_chart.segments.push(segment);
@@ -495,22 +495,29 @@ impl TJAParser {
 }
 
 fn normalize_line(line: &str) -> Option<&str> {
-    let line = line.split("//").next()?;
+    let line = if let Some(pos) = line.find("//") {
+        &line[..pos]
+    } else {
+        line
+    };
     let line = line.trim();
     if line.is_empty() {
-        return None;
+        None
+    } else {
+        Some(line)
     }
-    Some(line)
 }
 
 fn calculate_note_timestamp(state: &mut ParserState, segment: &mut Segment) {
     let count = segment.notes.len();
     if count > 0 {
+        let base = 60.0 * segment.measure_num as f64
+            / segment.measure_den as f64
+            * 4.0
+            / count as f64;
         for note in segment.notes.iter_mut() {
             note.timestamp = state.timestamp + note.delay;
-            state.timestamp +=
-                60.0 / note.bpm * segment.measure_num as f64 / segment.measure_den as f64 * 4.0
-                    / count as f64;
+            state.timestamp += base / note.bpm;
         }
     } else {
         state.timestamp +=

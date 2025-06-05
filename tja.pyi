@@ -13,6 +13,15 @@ class PyParsingMode(Enum):
     def __str__(self) -> str: ...
     def __repr__(self) -> str: ...
 
+class PyCourse(Enum):
+    Easy = "Easy"
+    Normal = "Normal"
+    Hard = "Hard"
+    Oni = "Oni"
+    Ura = "Ura"
+    def __str__(self) -> str: ...
+    def __repr__(self) -> str: ...
+
 class PyNote:
     note_type: PyNoteType
     timestamp: float
@@ -25,6 +34,7 @@ class PyNote:
     def export(self) -> Dict[str, Any]: ...
 
 class PySegment:
+    timestamp: float
     measure_num: int
     measure_den: int
     barline: bool
@@ -46,13 +56,39 @@ class PyChart:
     def __repr__(self) -> str: ...
     def export(self) -> Dict[str, Any]: ...
 
+class PyAudioData:
+    samples: List[float]
+    sample_rate: int
+    def __init__(self, samples: List[float], sample_rate: int) -> None: ...
+    def __str__(self) -> str: ...
+    def __repr__(self) -> str: ...
+    def export(self) -> Dict[str, Any]: ...
+    def get_samples(self) -> List[float]: ...
+    def get_sample_rate(self) -> int: ...
+
 class PyParsedTJA:
     metadata: Dict[str, str]
     charts: List[PyChart]
     def __str__(self) -> str: ...
     def __repr__(self) -> str: ...
     def export(self) -> Dict[str, Any]: ...
+    def synthesize_audio(
+        self,
+        music_data: PyAudioData,
+        don_data: PyAudioData,
+        ka_data: PyAudioData,
+        course: PyCourse,
+        branch: Optional[str] = None,
+    ) -> PyAudioData: ...
 
 def parse_tja(
     content: str, mode: PyParsingMode = PyParsingMode.Full
 ) -> PyParsedTJA: ...
+def synthesize_tja_audio_py(
+    tja: PyParsedTJA,
+    music_data: PyAudioData,
+    don_data: PyAudioData,
+    ka_data: PyAudioData,
+    course: PyCourse,
+    branch: Optional[str] = None,
+) -> PyAudioData: ...

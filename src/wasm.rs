@@ -1,7 +1,7 @@
-use crate::{ParsingMode, TJAParser, Course};
-use crate::synthesize::{AudioData, synthesize_tja_audio};
-use wasm_bindgen::prelude::*;
+use crate::synthesize::{synthesize_tja_audio, AudioData};
+use crate::{Course, ParsingMode, TJAParser};
 use serde::{Deserialize, Serialize};
+use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
 pub enum WasmParsingMode {
@@ -84,13 +84,13 @@ pub fn synthesize_tja_audio_wasm(
 ) -> Result<JsValue, JsValue> {
     let tja: crate::ParsedTJA = serde_wasm_bindgen::from_value(tja_js.clone())
         .map_err(|e| JsValue::from_str(&format!("Failed to parse TJA: {}", e)))?;
-    
+
     let music_data: WasmAudioData = serde_wasm_bindgen::from_value(music_data_js.clone())
         .map_err(|e| JsValue::from_str(&format!("Failed to parse music data: {}", e)))?;
-    
+
     let don_data: WasmAudioData = serde_wasm_bindgen::from_value(don_data_js.clone())
         .map_err(|e| JsValue::from_str(&format!("Failed to parse don data: {}", e)))?;
-    
+
     let ka_data: WasmAudioData = serde_wasm_bindgen::from_value(ka_data_js.clone())
         .map_err(|e| JsValue::from_str(&format!("Failed to parse ka data: {}", e)))?;
 

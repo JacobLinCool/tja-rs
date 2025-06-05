@@ -458,11 +458,11 @@ impl TJAParser {
                 if p1_chart
                     .headers
                     .get("STYLE")
-                    .map_or(false, |s| s.to_uppercase() == "DOUBLE")
+                    .is_some_and(|s| s.to_uppercase() == "DOUBLE")
                     && p2_chart
                         .headers
                         .get("STYLE")
-                        .map_or(false, |s| s.to_uppercase() == "DOUBLE")
+                        .is_some_and(|s| s.to_uppercase() == "DOUBLE")
                     && p1_chart.headers.get("COURSE") == p2_chart.headers.get("COURSE")
                 {
                     double_charts.push((p1_chart, *p2_chart));
@@ -511,10 +511,8 @@ fn normalize_line(line: &str) -> Option<&str> {
 fn calculate_note_timestamp(state: &mut ParserState, segment: &mut Segment) {
     let count = segment.notes.len();
     if count > 0 {
-        let base = 60.0 * segment.measure_num as f64
-            / segment.measure_den as f64
-            * 4.0
-            / count as f64;
+        let base =
+            60.0 * segment.measure_num as f64 / segment.measure_den as f64 * 4.0 / count as f64;
         for note in segment.notes.iter_mut() {
             note.timestamp = state.timestamp + note.delay;
             state.timestamp += base / note.bpm;

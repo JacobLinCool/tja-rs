@@ -1,10 +1,12 @@
 mod directives;
 mod parser;
 mod types;
+mod synthesize;
 
 pub use directives::*;
 pub use parser::*;
 pub use types::*;
+pub use synthesize::*;
 
 #[cfg(feature = "python")]
 mod python;

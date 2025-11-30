@@ -159,9 +159,11 @@ impl TJAParser {
                                         self.state_internal.as_mut().unwrap().bpm = bpm;
                                     }
                                 }
-                                metadata_dict.insert(key, value.clone());
+                                metadata_dict.insert(key, value);
                             } else {
-                                self.metadata = Some(Metadata::new(metadata_dict.clone()));
+                                // Take ownership of metadata_dict to avoid clone
+                                self.metadata =
+                                    Some(Metadata::new(std::mem::take(&mut metadata_dict)));
 
                                 match self.mode {
                                     ParsingMode::MetadataOnly => return Ok(()),

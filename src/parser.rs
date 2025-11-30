@@ -72,6 +72,7 @@ pub struct TJAParser {
     header_keys: HashSet<String>,
     inheritable_header_keys: HashSet<String>,
     mode: ParsingMode,
+    directive_handler: DirectiveHandler,
 }
 
 impl Default for TJAParser {
@@ -82,7 +83,7 @@ impl Default for TJAParser {
 
 impl TJAParser {
     pub fn new() -> Self {
-        let metadata_keys: HashSet<String> = vec![
+        let metadata_keys: HashSet<String> = [
             "TITLE",
             "SUBTITLE",
             "WAVE",
@@ -99,7 +100,7 @@ impl TJAParser {
         .map(String::from)
         .collect();
 
-        let header_keys: HashSet<String> = vec![
+        let header_keys: HashSet<String> = [
             "COURSE",
             "LEVEL",
             "BALLOON",
@@ -112,7 +113,7 @@ impl TJAParser {
         .collect();
 
         let inheritable_header_keys: HashSet<String> =
-            vec!["COURSE", "LEVEL", "SCOREINIT", "SCOREDIFF"]
+            ["COURSE", "LEVEL", "SCOREINIT", "SCOREDIFF"]
                 .into_iter()
                 .map(String::from)
                 .collect();
@@ -128,6 +129,7 @@ impl TJAParser {
             header_keys,
             inheritable_header_keys,
             mode: ParsingMode::Full,
+            directive_handler: DirectiveHandler::new(),
         }
     }
 
@@ -165,7 +167,7 @@ impl TJAParser {
                                     ParsingMode::MetadataOnly => return Ok(()),
                                     ParsingMode::MetadataAndHeader | ParsingMode::Full => {
                                         state.parsing_state = ParsingState::Header;
-                                        self.handle_metadata_or_header(line, &mut HashMap::new());
+                                        self.handle_metadata_or_header(line);
                                     }
                                 }
                             }
@@ -177,7 +179,7 @@ impl TJAParser {
                             state.parsing_state = ParsingState::Notes;
                             self.process_directive(&line[1..])?;
                         } else {
-                            self.handle_metadata_or_header(line, &mut HashMap::new());
+                            self.handle_metadata_or_header(line);
                         }
                     }
                     ParsingState::Notes => {
@@ -226,15 +228,9 @@ impl TJAParser {
         Ok(())
     }
 
-    fn handle_metadata_or_header(
-        &mut self,
-        line: &str,
-        metadata_dict: &mut HashMap<String, String>,
-    ) {
+    fn handle_metadata_or_header(&mut self, line: &str) {
         if let Some((key, value)) = self.parse_metadata_or_header(line) {
-            if self.metadata_keys.contains(&key) {
-                metadata_dict.insert(key, value);
-            } else if self.header_keys.contains(&key) {
+            if self.header_keys.contains(&key) {
                 if key == "BALLOON" {
                     let cleaned_value = value
                         .split(',')
@@ -271,8 +267,7 @@ impl TJAParser {
     }
 
     fn process_directive(&mut self, command: &str) -> Result<(), String> {
-        let handler = DirectiveHandler::new();
-        if let Some(directive) = handler.parse_directive(command) {
+        if let Some(directive) = self.directive_handler.parse_directive(command) {
             let state = self
                 .state
                 .as_mut()
@@ -394,7 +389,7 @@ impl TJAParser {
         for b in notes_str.as_bytes() {
             match b {
                 b'0'..=b'9' => {
-                    if let Some(note_type) = NoteType::from_char(*b as char) {
+                    if let Some(note_type) = NoteType::from_byte(*b) {
                         let note = Note {
                             note_type,
                             timestamp: -1.0,

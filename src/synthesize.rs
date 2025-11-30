@@ -106,7 +106,27 @@ fn resample(samples: &[f32], from_rate: u32, to_rate: u32) -> Vec<f32> {
 fn filter_notes(course_data: &Chart, branch: Option<&str>) -> Vec<FilteredNote> {
     let mut filtered_notes = Vec::new();
 
-    for (seg_idx, segment) in course_data.segments.iter().enumerate() {
+    // Pre-collect all EndOf timestamps in order for efficient lookup
+    // This avoids O(n*m) nested loop searching for EndOf notes
+    let mut end_of_timestamps: Vec<f64> = Vec::new();
+    for segment in &course_data.segments {
+        // Skip if branch doesn't match
+        if let Some(branch_name) = branch {
+            if let Some(segment_branch) = &segment.branch {
+                if segment_branch != branch_name {
+                    continue;
+                }
+            }
+        }
+        for note in &segment.notes {
+            if matches!(note.note_type, NoteType::EndOf) {
+                end_of_timestamps.push(note.timestamp);
+            }
+        }
+    }
+    let mut end_of_iter = end_of_timestamps.iter().peekable();
+
+    for segment in &course_data.segments {
         // Skip if branch doesn't match
         if let Some(branch_name) = branch {
             if let Some(segment_branch) = &segment.branch {
@@ -116,47 +136,19 @@ fn filter_notes(course_data: &Chart, branch: Option<&str>) -> Vec<FilteredNote> 
             }
         }
 
-        let mut i = 0;
-        while i < segment.notes.len() {
-            let note = &segment.notes[i];
-
+        for note in &segment.notes {
             match note.note_type {
                 NoteType::Roll | NoteType::RollBig | NoteType::Balloon | NoteType::BalloonAlt => {
-                    // Find the corresponding EndOf note
-                    let mut end_time: Option<f64> = None;
-
-                    // Search in current segment first
-                    for future_note in segment.notes[i + 1..].iter() {
-                        if matches!(future_note.note_type, NoteType::EndOf) {
-                            end_time = Some(future_note.timestamp);
+                    // Find the next EndOf note timestamp that comes after this note
+                    // Advance the iterator past any EndOf timestamps that are before or at the current note
+                    while let Some(&&end_time) = end_of_iter.peek() {
+                        if end_time > note.timestamp {
                             break;
                         }
+                        end_of_iter.next();
                     }
 
-                    // If not found in current segment, search in subsequent segments
-                    if end_time.is_none() {
-                        for future_segment in course_data.segments[seg_idx + 1..].iter() {
-                            if let Some(branch_name) = branch {
-                                if let Some(segment_branch) = &future_segment.branch {
-                                    if segment_branch != branch_name {
-                                        continue;
-                                    }
-                                }
-                            }
-
-                            for future_note in future_segment.notes.iter() {
-                                if matches!(future_note.note_type, NoteType::EndOf) {
-                                    end_time = Some(future_note.timestamp);
-                                    break;
-                                }
-                            }
-                            if end_time.is_some() {
-                                break;
-                            }
-                        }
-                    }
-
-                    if let Some(end_time) = end_time {
+                    if let Some(&&end_time) = end_of_iter.peek() {
                         let duration = end_time - note.timestamp;
                         let filtered_type = match note.note_type {
                             NoteType::Roll | NoteType::RollBig => {
@@ -171,6 +163,8 @@ fn filter_notes(course_data: &Chart, branch: Option<&str>) -> Vec<FilteredNote> 
                             note_type: filtered_type,
                             timestamp: note.timestamp,
                         });
+                        // Consume this EndOf timestamp
+                        end_of_iter.next();
                     } else {
                         eprintln!(
                             "Warning: No end marker found for roll/balloon starting at {}s",
@@ -192,7 +186,6 @@ fn filter_notes(course_data: &Chart, branch: Option<&str>) -> Vec<FilteredNote> 
                 }
                 _ => {}
             }
-            i += 1;
         }
     }
 
@@ -228,7 +221,7 @@ fn merge_samples(
                             break;
                         }
                         output_samples[hit_pos + j] =
-                            clamp(output_samples[hit_pos + j] + (sample * volume), -1.0, 1.0);
+                            (output_samples[hit_pos + j] + (sample * volume)).clamp(-1.0, 1.0);
                     }
                 }
             }
@@ -238,11 +231,8 @@ fn merge_samples(
                     if sample_pos + j >= output_samples.len() {
                         break;
                     }
-                    output_samples[sample_pos + j] = clamp(
-                        output_samples[sample_pos + j] + (sample * volume),
-                        -1.0,
-                        1.0,
-                    );
+                    output_samples[sample_pos + j] =
+                        (output_samples[sample_pos + j] + (sample * volume)).clamp(-1.0, 1.0);
                 }
             }
             FilteredNoteType::Ka => {
@@ -251,28 +241,14 @@ fn merge_samples(
                     if sample_pos + j >= output_samples.len() {
                         break;
                     }
-                    output_samples[sample_pos + j] = clamp(
-                        output_samples[sample_pos + j] + (sample * volume),
-                        -1.0,
-                        1.0,
-                    );
+                    output_samples[sample_pos + j] =
+                        (output_samples[sample_pos + j] + (sample * volume)).clamp(-1.0, 1.0);
                 }
             }
         }
     }
 
     output_samples
-}
-
-#[inline]
-fn clamp(value: f32, min: f32, max: f32) -> f32 {
-    if value < min {
-        min
-    } else if value > max {
-        max
-    } else {
-        value
-    }
 }
 
 impl ParsedTJA {

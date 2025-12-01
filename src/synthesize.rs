@@ -17,7 +17,7 @@ impl AudioData {
 }
 
 #[derive(Debug, Clone)]
-enum FilteredNoteType {
+pub enum FilteredNoteType {
     Don,
     Ka,
     DrumRoll { duration: f64 },
@@ -25,9 +25,9 @@ enum FilteredNoteType {
 }
 
 #[derive(Debug, Clone)]
-struct FilteredNote {
-    note_type: FilteredNoteType,
-    timestamp: f64,
+pub struct FilteredNote {
+    pub note_type: FilteredNoteType,
+    pub timestamp: f64,
 }
 
 pub fn synthesize_tja_audio(
@@ -103,7 +103,7 @@ fn resample(samples: &[f32], from_rate: u32, to_rate: u32) -> Vec<f32> {
     resampled
 }
 
-fn filter_notes(course_data: &Chart, branch: Option<&str>) -> Vec<FilteredNote> {
+pub fn filter_notes(course_data: &Chart, branch: Option<&str>) -> Vec<FilteredNote> {
     let mut filtered_notes = Vec::new();
 
     for (seg_idx, segment) in course_data.segments.iter().enumerate() {

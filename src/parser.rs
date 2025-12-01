@@ -83,7 +83,7 @@ impl Default for TJAParser {
 
 impl TJAParser {
     pub fn new() -> Self {
-        let metadata_keys: HashSet<String> = [
+        let mut metadata_keys: HashSet<String> = vec![
             "TITLE",
             "SUBTITLE",
             "WAVE",
@@ -100,7 +100,14 @@ impl TJAParser {
         .map(String::from)
         .collect();
 
-        let header_keys: HashSet<String> = [
+        let localized_metadata_keys: HashSet<String> = ["JA", "EN", "CN", "TW", "ZH", "KO"]
+            .into_iter()
+            .flat_map(|loc| vec![format!("TITLE{}", loc), format!("SUBTITLE{}", loc)])
+            .collect();
+
+        metadata_keys.extend(localized_metadata_keys);
+
+        let header_keys: HashSet<String> = vec![
             "COURSE",
             "LEVEL",
             "BALLOON",

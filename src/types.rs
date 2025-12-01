@@ -35,6 +35,24 @@ impl NoteType {
             _ => None,
         }
     }
+
+    /// Faster version that works directly with ASCII bytes (0-9)
+    #[inline]
+    pub fn from_byte(b: u8) -> Option<Self> {
+        match b {
+            b'0' => Some(NoteType::Empty),
+            b'1' => Some(NoteType::Don),
+            b'2' => Some(NoteType::Ka),
+            b'3' => Some(NoteType::DonBig),
+            b'4' => Some(NoteType::KaBig),
+            b'5' => Some(NoteType::Roll),
+            b'6' => Some(NoteType::RollBig),
+            b'7' => Some(NoteType::Balloon),
+            b'8' => Some(NoteType::EndOf),
+            b'9' => Some(NoteType::BalloonAlt),
+            _ => None,
+        }
+    }
 }
 
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]

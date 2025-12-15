@@ -322,16 +322,18 @@ impl TJAParser {
                     state.current_segment = None;
                 }
                 Directive::End => {
-                    if let Some(mut segment) = state.current_segment.take() {
-                        if let Some(current_chart) = self.charts.last_mut() {
-                            calculate_note_timestamp(
-                                state,
-                                &mut segment,
-                                self.mode == ParsingMode::FullWithBlanks,
-                            );
-                            current_chart.segments.push(segment);
+                    if let (Some(segment), Some(current_chart)) =
+                        (state.current_segment.take(), self.charts.last_mut())
+                    {
+                        if let Some(parsed_segment) = calculate_note_timestamp(
+                            state,
+                            segment,
+                            self.mode == ParsingMode::FullWithBlanks,
+                        ) {
+                            current_chart.segments.push(parsed_segment);
                         }
                     }
+
                     state.parsing_chart = false;
                     state.branch_condition = None;
                 }
@@ -434,13 +436,23 @@ impl TJAParser {
                     }
                 }
                 b',' => {
-                    if let Some(mut segment) = state.current_segment.take() {
-                        calculate_note_timestamp(
-                            state,
-                            &mut segment,
-                            self.mode == ParsingMode::FullWithBlanks,
-                        );
-                        current_chart.segments.push(segment);
+                    let segment = state.current_segment.take().unwrap_or_else(|| {
+                        Segment::new(
+                            state.timestamp + state.delay,
+                            state.measure_num,
+                            state.measure_den,
+                            state.barline,
+                            state.current_branch.clone(),
+                            state.branch_condition.clone(),
+                        )
+                    });
+
+                    if let Some(parsed_segment) = calculate_note_timestamp(
+                        state,
+                        segment,
+                        self.mode == ParsingMode::FullWithBlanks,
+                    ) {
+                        current_chart.segments.push(parsed_segment);
                     }
                 }
                 _ => {}
@@ -525,11 +537,17 @@ fn normalize_line(line: &str) -> Option<&str> {
     }
 }
 
-fn calculate_note_timestamp(state: &mut ParserState, segment: &mut Segment, keep_blanks: bool) {
+fn calculate_note_timestamp(
+    state: &mut ParserState,
+    mut segment: Segment,
+    keep_blanks: bool,
+) -> Option<Segment> {
     let count = segment.notes.len();
+
     if count > 0 {
         let base =
             60.0 * segment.measure_num as f64 / segment.measure_den as f64 * 4.0 / count as f64;
+
         for note in segment.notes.iter_mut() {
             note.timestamp = state.timestamp + note.delay;
             state.timestamp += base / note.bpm;
@@ -543,5 +561,11 @@ fn calculate_note_timestamp(state: &mut ParserState, segment: &mut Segment, keep
         segment
             .notes
             .retain(|note| note.note_type != NoteType::Empty);
+    }
+
+    if !segment.notes.is_empty() || keep_blanks {
+        Some(segment)
+    } else {
+        None
     }
 }

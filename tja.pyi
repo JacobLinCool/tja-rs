@@ -10,6 +10,7 @@ class PyParsingMode(Enum):
     MetadataOnly = "MetadataOnly"
     MetadataAndHeader = "MetadataAndHeader"
     Full = "Full"
+    FullWithBlanks = "FullWithBlanks"
     def __str__(self) -> str: ...
     def __repr__(self) -> str: ...
 

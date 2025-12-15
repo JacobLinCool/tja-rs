@@ -367,6 +367,7 @@ pub enum PyParsingMode {
     MetadataOnly,
     MetadataAndHeader,
     Full,
+    FullWithBlanks,
 }
 
 #[pymethods]
@@ -387,6 +388,7 @@ impl From<PyParsingMode> for ParsingMode {
             PyParsingMode::MetadataOnly => ParsingMode::MetadataOnly,
             PyParsingMode::MetadataAndHeader => ParsingMode::MetadataAndHeader,
             PyParsingMode::Full => ParsingMode::Full,
+            PyParsingMode::FullWithBlanks => ParsingMode::FullWithBlanks,
         }
     }
 }

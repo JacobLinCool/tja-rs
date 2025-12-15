@@ -15,6 +15,7 @@ pub enum ParsingMode {
     MetadataOnly,
     MetadataAndHeader,
     Full,
+    FullWithBlanks,
 }
 
 #[derive(Debug, Clone)]
@@ -174,7 +175,9 @@ impl TJAParser {
 
                                 match self.mode {
                                     ParsingMode::MetadataOnly => return Ok(()),
-                                    ParsingMode::MetadataAndHeader | ParsingMode::Full => {
+                                    ParsingMode::MetadataAndHeader
+                                    | ParsingMode::Full
+                                    | ParsingMode::FullWithBlanks => {
                                         state.parsing_state = ParsingState::Header;
                                         self.handle_metadata_or_header(line);
                                     }
@@ -192,7 +195,9 @@ impl TJAParser {
                         }
                     }
                     ParsingState::Notes => {
-                        if self.mode == ParsingMode::Full {
+                        if self.mode == ParsingMode::Full
+                            || self.mode == ParsingMode::FullWithBlanks
+                        {
                             if line.starts_with("#END") {
                                 if !notes_buffer.is_empty() {
                                     self.process_notes_buffer(&notes_buffer)?;
@@ -319,7 +324,11 @@ impl TJAParser {
                 Directive::End => {
                     if let Some(mut segment) = state.current_segment.take() {
                         if let Some(current_chart) = self.charts.last_mut() {
-                            calculate_note_timestamp(state, &mut segment);
+                            calculate_note_timestamp(
+                                state,
+                                &mut segment,
+                                self.mode == ParsingMode::FullWithBlanks,
+                            );
                             current_chart.segments.push(segment);
                         }
                     }
@@ -426,7 +435,11 @@ impl TJAParser {
                 }
                 b',' => {
                     if let Some(mut segment) = state.current_segment.take() {
-                        calculate_note_timestamp(state, &mut segment);
+                        calculate_note_timestamp(
+                            state,
+                            &mut segment,
+                            self.mode == ParsingMode::FullWithBlanks,
+                        );
                         current_chart.segments.push(segment);
                     }
                 }
@@ -512,7 +525,7 @@ fn normalize_line(line: &str) -> Option<&str> {
     }
 }
 
-fn calculate_note_timestamp(state: &mut ParserState, segment: &mut Segment) {
+fn calculate_note_timestamp(state: &mut ParserState, segment: &mut Segment, keep_blanks: bool) {
     let count = segment.notes.len();
     if count > 0 {
         let base =
@@ -525,7 +538,10 @@ fn calculate_note_timestamp(state: &mut ParserState, segment: &mut Segment) {
         state.timestamp +=
             60.0 / state.bpm * segment.measure_num as f64 / segment.measure_den as f64 * 4.0;
     }
-    segment
-        .notes
-        .retain(|note| note.note_type != NoteType::Empty);
+
+    if !keep_blanks {
+        segment
+            .notes
+            .retain(|note| note.note_type != NoteType::Empty);
+    }
 }

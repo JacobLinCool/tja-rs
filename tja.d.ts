@@ -4,6 +4,7 @@ export enum WasmParsingMode {
     MetadataOnly = 0,
     MetadataAndHeader = 1,
     Full = 2,
+    FullWithBlanks = 3,
 }
 
 export interface ParsedTJA {

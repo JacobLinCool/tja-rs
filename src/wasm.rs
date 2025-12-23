@@ -8,6 +8,7 @@ pub enum WasmParsingMode {
     MetadataOnly,
     MetadataAndHeader,
     Full,
+    FullWithBlanks,
 }
 
 impl From<WasmParsingMode> for ParsingMode {
@@ -16,6 +17,7 @@ impl From<WasmParsingMode> for ParsingMode {
             WasmParsingMode::MetadataOnly => ParsingMode::MetadataOnly,
             WasmParsingMode::MetadataAndHeader => ParsingMode::MetadataAndHeader,
             WasmParsingMode::Full => ParsingMode::Full,
+            WasmParsingMode::FullWithBlanks => ParsingMode::FullWithBlanks,
         }
     }
 }

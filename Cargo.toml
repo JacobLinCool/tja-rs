@@ -1,6 +1,6 @@
 [package]
 name = "tja"
-version = "0.4.1"
+version = "0.5.0"
 edition = "2021"
 description = "TJA file parser written in Rust, working in Rust, Python, and WebAssembly."
 license = "MIT"

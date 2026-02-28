@@ -231,13 +231,8 @@ impl TJAParser {
         Ok(())
     }
 
-    pub fn parse_str_bumpalo(&mut self, content: &str) -> Result<(), String> {
-        self.parse_str(content)
-    }
-
-    fn process_notes_buffer<T: AsRef<str>>(&mut self, notes_buffer: &[T]) -> Result<(), String> {
+    fn process_notes_buffer(&mut self, notes_buffer: &[String]) -> Result<(), String> {
         for line in notes_buffer {
-            let line = line.as_ref();
             if let Some(command) = line.strip_prefix("#") {
                 self.process_directive(command)?;
             } else {

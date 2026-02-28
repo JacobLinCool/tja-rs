@@ -1,6 +1,5 @@
 use crate::directives::{Directive, DirectiveHandler};
 use crate::types::*;
-use bumpalo::{collections::Vec as BumpVec, Bump};
 use std::collections::HashMap;
 use std::collections::HashSet;
 
@@ -233,87 +232,7 @@ impl TJAParser {
     }
 
     pub fn parse_str_bumpalo(&mut self, content: &str) -> Result<(), String> {
-        let mut metadata_dict = HashMap::with_capacity(self.metadata_keys.len());
-        let bump = Bump::new();
-        let mut notes_buffer = BumpVec::new_in(&bump);
-
-        self.state = Some(ParserState::new(120.0));
-        self.state_internal = Some(ParserState::new(120.0));
-
-        for line in content.lines() {
-            if let Some(line) = normalize_line(line) {
-                match self.state.as_ref().unwrap().parsing_state {
-                    ParsingState::Metadata => {
-                        if let Some((key, value)) = self.parse_metadata_or_header(line) {
-                            let state = self.state.as_mut().unwrap();
-                            if self.metadata_keys.contains(&key) {
-                                if key == "BPM" {
-                                    if let Ok(bpm) = value.parse::<f64>() {
-                                        state.bpm = bpm;
-                                        self.state_internal.as_mut().unwrap().bpm = bpm;
-                                    }
-                                }
-                                metadata_dict.insert(key, value);
-                            } else {
-                                self.metadata =
-                                    Some(Metadata::new(std::mem::take(&mut metadata_dict)));
-
-                                match self.mode {
-                                    ParsingMode::MetadataOnly => return Ok(()),
-                                    ParsingMode::MetadataAndHeader
-                                    | ParsingMode::Full
-                                    | ParsingMode::FullWithBlanks => {
-                                        state.parsing_state = ParsingState::Header;
-                                        self.handle_metadata_or_header(line);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    ParsingState::Header => {
-                        let state = self.state.as_mut().unwrap();
-                        if line.starts_with("#START") {
-                            state.parsing_state = ParsingState::Notes;
-                            self.process_directive(&line[1..])?;
-                        } else {
-                            self.handle_metadata_or_header(line);
-                        }
-                    }
-                    ParsingState::Notes => {
-                        if self.mode == ParsingMode::Full
-                            || self.mode == ParsingMode::FullWithBlanks
-                        {
-                            if line.starts_with("#END") {
-                                if !notes_buffer.is_empty() {
-                                    self.process_notes_buffer(&notes_buffer)?;
-                                    notes_buffer.clear();
-                                }
-                                self.process_directive(&line[1..])?;
-                                let state = self.state.as_mut().unwrap();
-                                state.parsing_state = ParsingState::Header;
-                            } else if let Some(directive) = line.strip_prefix('#') {
-                                if !notes_buffer.is_empty() {
-                                    self.process_notes_buffer(&notes_buffer)?;
-                                    notes_buffer.clear();
-                                }
-                                self.process_directive(directive)?;
-                            } else {
-                                notes_buffer.push(line);
-                            }
-                        } else if line.starts_with("#END") {
-                            let state = self.state.as_mut().unwrap();
-                            state.parsing_state = ParsingState::Header;
-                        }
-                    }
-                }
-            }
-        }
-
-        if !notes_buffer.is_empty() {
-            self.process_notes_buffer(&notes_buffer)?;
-        }
-
-        Ok(())
+        self.parse_str(content)
     }
 
     fn process_notes_buffer<T: AsRef<str>>(&mut self, notes_buffer: &[T]) -> Result<(), String> {

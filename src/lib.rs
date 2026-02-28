@@ -85,15 +85,21 @@ mod tests {
     fn test_parse_supernova_bumpalo_matches_standard() {
         let content = fs::read_to_string("data/SUPERNOVA.tja").unwrap();
 
-        let mut standard_parser = TJAParser::new();
-        standard_parser.parse_str(&content).unwrap();
+        for mode in [
+            ParsingMode::MetadataOnly,
+            ParsingMode::MetadataAndHeader,
+            ParsingMode::Full,
+        ] {
+            let mut standard_parser = TJAParser::with_mode(mode.clone());
+            standard_parser.parse_str(&content).unwrap();
 
-        let mut bumpalo_parser = TJAParser::new();
-        bumpalo_parser.parse_str_bumpalo(&content).unwrap();
+            let mut bumpalo_parser = TJAParser::with_mode(mode);
+            bumpalo_parser.parse_str_bumpalo(&content).unwrap();
 
-        assert_eq!(
-            serde_json::to_value(standard_parser.get_parsed_tja()).unwrap(),
-            serde_json::to_value(bumpalo_parser.get_parsed_tja()).unwrap()
-        );
+            assert_eq!(
+                serde_json::to_value(standard_parser.get_parsed_tja()).unwrap(),
+                serde_json::to_value(bumpalo_parser.get_parsed_tja()).unwrap()
+            );
+        }
     }
 }

@@ -34,10 +34,16 @@ fn parse_benchmark(c: &mut Criterion) {
     // Benchmark each file with each parsing mode
     for (filename, content) in tja_files {
         for (mode, mode_name) in &modes {
-            group.bench_function(format!("{} - {}", mode_name, filename), |b| {
+            group.bench_function(format!("baseline/{} - {}", mode_name, filename), |b| {
                 b.iter(|| {
                     let mut parser = TJAParser::with_mode(mode.clone());
                     parser.parse_str(black_box(&content)).unwrap();
+                });
+            });
+            group.bench_function(format!("bumpalo/{} - {}", mode_name, filename), |b| {
+                b.iter(|| {
+                    let mut parser = TJAParser::with_mode(mode.clone());
+                    parser.parse_str_bumpalo(black_box(&content)).unwrap();
                 });
             });
         }

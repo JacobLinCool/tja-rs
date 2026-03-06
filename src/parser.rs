@@ -2,6 +2,7 @@ use crate::directives::{Directive, DirectiveHandler};
 use crate::types::*;
 use std::collections::HashMap;
 use std::collections::HashSet;
+use std::rc::Rc;
 
 #[derive(Debug, Clone, PartialEq)]
 pub enum ParsingState {
@@ -26,8 +27,8 @@ pub struct ParserState {
     pub barline: bool,
     pub measure_num: i32,
     pub measure_den: i32,
-    pub branch_condition: Option<String>,
-    pub current_branch: Option<String>,
+    pub branch_condition: Option<Rc<str>>,
+    pub current_branch: Option<&'static str>,
     pub parsing_chart: bool,
     pub delay: f64,
     pub timestamp: f64,
@@ -149,7 +150,6 @@ impl TJAParser {
 
     pub fn parse_str(&mut self, content: &str) -> Result<(), String> {
         let mut metadata_dict = HashMap::with_capacity(self.metadata_keys.len());
-        let mut notes_buffer = Vec::new();
 
         self.state = Some(ParserState::new(120.0));
         self.state_internal = Some(ParserState::new(120.0));
@@ -199,21 +199,13 @@ impl TJAParser {
                             || self.mode == ParsingMode::FullWithBlanks
                         {
                             if line.starts_with("#END") {
-                                if !notes_buffer.is_empty() {
-                                    self.process_notes_buffer(&notes_buffer)?;
-                                    notes_buffer.clear();
-                                }
                                 self.process_directive(&line[1..])?;
                                 let state = self.state.as_mut().unwrap();
                                 state.parsing_state = ParsingState::Header;
                             } else if let Some(directive) = line.strip_prefix('#') {
-                                if !notes_buffer.is_empty() {
-                                    self.process_notes_buffer(&notes_buffer)?;
-                                    notes_buffer.clear();
-                                }
                                 self.process_directive(directive)?;
                             } else {
-                                notes_buffer.push(line.to_string());
+                                self.process_notes(line)?;
                             }
                         } else if line.starts_with("#END") {
                             let state = self.state.as_mut().unwrap();
@@ -224,21 +216,6 @@ impl TJAParser {
             }
         }
 
-        if !notes_buffer.is_empty() {
-            self.process_notes_buffer(&notes_buffer)?;
-        }
-
-        Ok(())
-    }
-
-    fn process_notes_buffer(&mut self, notes_buffer: &[String]) -> Result<(), String> {
-        for line in notes_buffer {
-            if let Some(command) = line.strip_prefix("#") {
-                self.process_directive(command)?;
-            } else {
-                self.process_notes(line)?;
-            }
-        }
         Ok(())
     }
 
@@ -276,7 +253,7 @@ impl TJAParser {
                 return None;
             }
 
-            Some((key.to_uppercase(), val.to_string()))
+            Some((key.to_ascii_uppercase(), val.to_string()))
         })
     }
 
@@ -314,8 +291,7 @@ impl TJAParser {
                         .unwrap()
                         .branch_condition
                         .clone();
-                    state.current_branch =
-                        self.state_internal.as_ref().unwrap().current_branch.clone();
+                    state.current_branch = self.state_internal.as_ref().unwrap().current_branch;
                     state.delay = self.state_internal.as_ref().unwrap().delay;
                     state.timestamp_branch_start =
                         self.state_internal.as_ref().unwrap().timestamp_branch_start;
@@ -356,7 +332,7 @@ impl TJAParser {
                     state.barline = true;
                 }
                 Directive::BranchStart(condition) => {
-                    state.branch_condition = Some(condition);
+                    state.branch_condition = Some(Rc::from(condition));
                     state.timestamp_branch_start = state.timestamp;
                 }
                 Directive::BranchEnd => {
@@ -375,15 +351,15 @@ impl TJAParser {
                     // Handle section if needed, i don't remember what's this
                 }
                 Directive::BranchNormal => {
-                    state.current_branch = Some("N".to_string());
+                    state.current_branch = Some("N");
                     state.timestamp = state.timestamp_branch_start;
                 }
                 Directive::BranchMaster => {
-                    state.current_branch = Some("M".to_string());
+                    state.current_branch = Some("M");
                     state.timestamp = state.timestamp_branch_start;
                 }
                 Directive::BranchExpert => {
-                    state.current_branch = Some("E".to_string());
+                    state.current_branch = Some("E");
                     state.timestamp = state.timestamp_branch_start;
                 }
             }
@@ -425,8 +401,8 @@ impl TJAParser {
                                 state.measure_num,
                                 state.measure_den,
                                 state.barline,
-                                state.current_branch.clone(),
-                                state.branch_condition.clone(),
+                                state.current_branch.map(String::from),
+                                state.branch_condition.as_ref().map(|s| s.to_string()),
                             ));
                             state.current_segment.as_mut().unwrap().notes.reserve(64);
                         }
@@ -442,8 +418,8 @@ impl TJAParser {
                             state.measure_num,
                             state.measure_den,
                             state.barline,
-                            state.current_branch.clone(),
-                            state.branch_condition.clone(),
+                            state.current_branch.map(String::from),
+                            state.branch_condition.as_ref().map(|s| s.to_string()),
                         )
                     });
 

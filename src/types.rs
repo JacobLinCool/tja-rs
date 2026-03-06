@@ -223,7 +223,7 @@ impl Chart {
             level,
             balloons,
             headers,
-            segments: Vec::new(),
+            segments: Vec::with_capacity(256),
         }
     }
 

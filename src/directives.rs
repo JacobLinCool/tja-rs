@@ -103,7 +103,7 @@ impl DirectiveHandler {
             Some(idx) => &command[..idx],
             None => command,
         };
-        
+
         // Use case-insensitive comparison without allocating
         if base_directive.eq_ignore_ascii_case("START")
             || base_directive.eq_ignore_ascii_case("END")

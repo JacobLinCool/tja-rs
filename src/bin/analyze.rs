@@ -47,7 +47,7 @@ fn analyze_tja(parsed: &tja::ParsedTJA) {
     }
 
     let oni_course = oni_course.unwrap();
-    let notes = tja::filter_notes(oni_course, Some(&"M"));
+    let notes = tja::filter_notes(oni_course, Some("M"));
 
     let mut gaps = HashMap::<u64, u64>::new();
 
@@ -70,13 +70,16 @@ fn analyze_tja(parsed: &tja::ParsedTJA) {
     while unit < smallest_gap {
         let mut should_stop = false;
 
-        for (gap, _) in &gaps {
+        for gap in gaps.keys() {
             println!("Checking gap: {} (unit: {})", gap, unit);
             let gap_unit = (gap + unit / 2) / unit;
             let reconstructed_gap = gap_unit * unit;
             println!("Reconstructed gap: {}", reconstructed_gap);
             if reconstructed_gap < base_unit {
-                println!("Gap {} is smaller than base unit {}, skipping.", reconstructed_gap, base_unit);
+                println!(
+                    "Gap {} is smaller than base unit {}, skipping.",
+                    reconstructed_gap, base_unit
+                );
                 continue;
             }
             if reconstructed_gap < 1000 {
@@ -108,6 +111,9 @@ fn analyze_tja(parsed: &tja::ParsedTJA) {
         let gap_ms = (gap + 500) / 1000;
         let gap_base_unit = (gap + base_unit / 2) / base_unit;
         let gap_unit = (gap + unit / 2) / unit;
-        println!("{} ms ({} base units, {} units): {}", gap_ms, gap_base_unit, gap_unit, count);
+        println!(
+            "{} ms ({} base units, {} units): {}",
+            gap_ms, gap_base_unit, gap_unit, count
+        );
     }
 }

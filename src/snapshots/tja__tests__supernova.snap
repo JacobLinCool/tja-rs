@@ -103,15 +103,6 @@ snapshot_kind: text
           ]
         },
         {
-          "timestamp": 2.6150949149240015,
-          "measure_num": 4,
-          "measure_den": 4,
-          "barline": true,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
-        },
-        {
           "timestamp": 3.747170875511963,
           "measure_num": 4,
           "measure_den": 4,
@@ -9393,15 +9384,6 @@ snapshot_kind: text
               "gogo": true
             }
           ]
-        },
-        {
-          "timestamp": 139.59628614608772,
-          "measure_num": 4,
-          "measure_den": 4,
-          "barline": true,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
         }
       ]
     },
@@ -9421,15 +9403,6 @@ snapshot_kind: text
         "SCOREINIT": "1070"
       },
       "segments": [
-        {
-          "timestamp": 1.1999999641890422,
-          "measure_num": 1,
-          "measure_den": 4,
-          "barline": false,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
-        },
         {
           "timestamp": 1.4830189543360353,
           "measure_num": 4,
@@ -9460,15 +9433,6 @@ snapshot_kind: text
               "scroll": 1.0
             }
           ]
-        },
-        {
-          "timestamp": 2.6150949149240015,
-          "measure_num": 4,
-          "measure_den": 4,
-          "barline": true,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
         },
         {
           "timestamp": 3.747170875511963,
@@ -9502,15 +9466,6 @@ snapshot_kind: text
           ]
         },
         {
-          "timestamp": 4.8792468360999415,
-          "measure_num": 4,
-          "measure_den": 4,
-          "barline": true,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
-        },
-        {
           "timestamp": 6.011322796687924,
           "measure_num": 4,
           "measure_den": 4,
@@ -9540,15 +9495,6 @@ snapshot_kind: text
               "scroll": 1.0
             }
           ]
-        },
-        {
-          "timestamp": 7.143398757275907,
-          "measure_num": 4,
-          "measure_den": 4,
-          "barline": true,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
         },
         {
           "timestamp": 8.27547471786388,
@@ -17673,15 +17619,6 @@ snapshot_kind: text
               "gogo": true
             }
           ]
-        },
-        {
-          "timestamp": 139.59628614608772,
-          "measure_num": 4,
-          "measure_den": 4,
-          "barline": true,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
         }
       ]
     },
@@ -17705,15 +17642,6 @@ snapshot_kind: text
         "SCOREINIT": "1980"
       },
       "segments": [
-        {
-          "timestamp": 1.1999999641890422,
-          "measure_num": 1,
-          "measure_den": 4,
-          "barline": false,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
-        },
         {
           "timestamp": 1.4830189543360353,
           "measure_num": 4,
@@ -17744,15 +17672,6 @@ snapshot_kind: text
               "scroll": 1.0
             }
           ]
-        },
-        {
-          "timestamp": 2.6150949149240015,
-          "measure_num": 4,
-          "measure_den": 4,
-          "barline": true,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
         },
         {
           "timestamp": 3.747170875511963,
@@ -17786,15 +17705,6 @@ snapshot_kind: text
           ]
         },
         {
-          "timestamp": 4.8792468360999415,
-          "measure_num": 4,
-          "measure_den": 4,
-          "barline": true,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
-        },
-        {
           "timestamp": 6.011322796687924,
           "measure_num": 4,
           "measure_den": 4,
@@ -17824,15 +17734,6 @@ snapshot_kind: text
               "scroll": 1.0
             }
           ]
-        },
-        {
-          "timestamp": 7.143398757275907,
-          "measure_num": 4,
-          "measure_den": 4,
-          "barline": true,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
         },
         {
           "timestamp": 8.27547471786388,
@@ -19536,24 +19437,6 @@ snapshot_kind: text
               "scroll": 1.0
             }
           ]
-        },
-        {
-          "timestamp": 52.42643718079355,
-          "measure_num": 4,
-          "measure_den": 4,
-          "barline": true,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
-        },
-        {
-          "timestamp": 53.55851314138149,
-          "measure_num": 4,
-          "measure_den": 4,
-          "barline": true,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
         },
         {
           "timestamp": 54.69058910196943,
@@ -21535,24 +21418,6 @@ snapshot_kind: text
           ]
         },
         {
-          "timestamp": 109.03023521020413,
-          "measure_num": 4,
-          "measure_den": 4,
-          "barline": true,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
-        },
-        {
-          "timestamp": 110.1623111707924,
-          "measure_num": 4,
-          "measure_den": 4,
-          "barline": true,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
-        },
-        {
           "timestamp": 111.29438713138069,
           "measure_num": 4,
           "measure_den": 4,
@@ -21689,15 +21554,6 @@ snapshot_kind: text
               "scroll": 1.0
             }
           ]
-        },
-        {
-          "timestamp": 115.82269097373381,
-          "measure_num": 4,
-          "measure_den": 4,
-          "barline": true,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
         },
         {
           "timestamp": 116.9547669343221,
@@ -22794,15 +22650,6 @@ snapshot_kind: text
               "gogo": true
             }
           ]
-        },
-        {
-          "timestamp": 139.59628614608772,
-          "measure_num": 4,
-          "measure_den": 4,
-          "barline": true,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
         }
       ]
     },
@@ -22826,15 +22673,6 @@ snapshot_kind: text
         "SCOREINIT": "2440"
       },
       "segments": [
-        {
-          "timestamp": 1.1999999641890422,
-          "measure_num": 1,
-          "measure_den": 4,
-          "barline": false,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
-        },
         {
           "timestamp": 1.4830189543360353,
           "measure_num": 4,
@@ -22865,15 +22703,6 @@ snapshot_kind: text
               "scroll": 1.0
             }
           ]
-        },
-        {
-          "timestamp": 2.6150949149240015,
-          "measure_num": 4,
-          "measure_den": 4,
-          "barline": true,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
         },
         {
           "timestamp": 3.747170875511963,
@@ -22907,15 +22736,6 @@ snapshot_kind: text
           ]
         },
         {
-          "timestamp": 4.8792468360999415,
-          "measure_num": 4,
-          "measure_den": 4,
-          "barline": true,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
-        },
-        {
           "timestamp": 6.011322796687924,
           "measure_num": 4,
           "measure_den": 4,
@@ -22945,15 +22765,6 @@ snapshot_kind: text
               "scroll": 1.0
             }
           ]
-        },
-        {
-          "timestamp": 7.143398757275907,
-          "measure_num": 4,
-          "measure_den": 4,
-          "barline": true,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
         },
         {
           "timestamp": 8.27547471786388,
@@ -24466,24 +24277,6 @@ snapshot_kind: text
               "scroll": 1.0
             }
           ]
-        },
-        {
-          "timestamp": 52.42643718079355,
-          "measure_num": 4,
-          "measure_den": 4,
-          "barline": true,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
-        },
-        {
-          "timestamp": 53.55851314138149,
-          "measure_num": 4,
-          "measure_den": 4,
-          "barline": true,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
         },
         {
           "timestamp": 54.69058910196943,
@@ -26139,24 +25932,6 @@ snapshot_kind: text
           ]
         },
         {
-          "timestamp": 109.03023521020413,
-          "measure_num": 4,
-          "measure_den": 4,
-          "barline": true,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
-        },
-        {
-          "timestamp": 110.1623111707924,
-          "measure_num": 4,
-          "measure_den": 4,
-          "barline": true,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
-        },
-        {
           "timestamp": 111.29438713138069,
           "measure_num": 4,
           "measure_den": 4,
@@ -26286,15 +26061,6 @@ snapshot_kind: text
               "scroll": 1.0
             }
           ]
-        },
-        {
-          "timestamp": 115.82269097373381,
-          "measure_num": 4,
-          "measure_den": 4,
-          "barline": true,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
         },
         {
           "timestamp": 116.9547669343221,
@@ -27226,15 +26992,6 @@ snapshot_kind: text
               "gogo": true
             }
           ]
-        },
-        {
-          "timestamp": 139.59628614608772,
-          "measure_num": 4,
-          "measure_den": 4,
-          "barline": true,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
         }
       ]
     },
@@ -27258,15 +27015,6 @@ snapshot_kind: text
         "SCOREINIT": "3780"
       },
       "segments": [
-        {
-          "timestamp": 1.1999999641890422,
-          "measure_num": 1,
-          "measure_den": 4,
-          "barline": false,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
-        },
         {
           "timestamp": 1.4830189543360353,
           "measure_num": 4,
@@ -27297,15 +27045,6 @@ snapshot_kind: text
               "scroll": 1.0
             }
           ]
-        },
-        {
-          "timestamp": 2.6150949149240015,
-          "measure_num": 4,
-          "measure_den": 4,
-          "barline": true,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
         },
         {
           "timestamp": 3.747170875511963,
@@ -27339,15 +27078,6 @@ snapshot_kind: text
           ]
         },
         {
-          "timestamp": 4.8792468360999415,
-          "measure_num": 4,
-          "measure_den": 4,
-          "barline": true,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
-        },
-        {
           "timestamp": 6.011322796687924,
           "measure_num": 4,
           "measure_den": 4,
@@ -27379,15 +27109,6 @@ snapshot_kind: text
           ]
         },
         {
-          "timestamp": 7.143398757275907,
-          "measure_num": 4,
-          "measure_den": 4,
-          "barline": true,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
-        },
-        {
           "timestamp": 8.27547471786388,
           "measure_num": 4,
           "measure_den": 4,
@@ -27417,15 +27138,6 @@ snapshot_kind: text
               "scroll": 1.0
             }
           ]
-        },
-        {
-          "timestamp": 9.40755067845182,
-          "measure_num": 4,
-          "measure_den": 4,
-          "barline": true,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
         },
         {
           "timestamp": 10.53962663903976,
@@ -27629,15 +27341,6 @@ snapshot_kind: text
               "scroll": 1.0
             }
           ]
-        },
-        {
-          "timestamp": 18.46415836315534,
-          "measure_num": 4,
-          "measure_den": 4,
-          "barline": true,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
         },
         {
           "timestamp": 19.596234323743282,
@@ -28502,24 +28205,6 @@ snapshot_kind: text
               "scroll": 1.0
             }
           ]
-        },
-        {
-          "timestamp": 52.42643718079355,
-          "measure_num": 4,
-          "measure_den": 4,
-          "barline": true,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
-        },
-        {
-          "timestamp": 53.55851314138149,
-          "measure_num": 4,
-          "measure_den": 4,
-          "barline": true,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
         },
         {
           "timestamp": 54.69058910196943,
@@ -29758,24 +29443,6 @@ snapshot_kind: text
           ]
         },
         {
-          "timestamp": 109.03023521020413,
-          "measure_num": 4,
-          "measure_den": 4,
-          "barline": true,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
-        },
-        {
-          "timestamp": 110.1623111707924,
-          "measure_num": 4,
-          "measure_den": 4,
-          "barline": true,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
-        },
-        {
           "timestamp": 111.29438713138069,
           "measure_num": 4,
           "measure_den": 4,
@@ -29877,15 +29544,6 @@ snapshot_kind: text
               "scroll": 1.0
             }
           ]
-        },
-        {
-          "timestamp": 115.82269097373381,
-          "measure_num": 4,
-          "measure_den": 4,
-          "barline": true,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
         },
         {
           "timestamp": 116.9547669343221,
@@ -30571,15 +30229,6 @@ snapshot_kind: text
               "gogo": true
             }
           ]
-        },
-        {
-          "timestamp": 139.59628614608772,
-          "measure_num": 4,
-          "measure_den": 4,
-          "barline": true,
-          "branch": null,
-          "branch_condition": null,
-          "notes": []
         }
       ]
     }
